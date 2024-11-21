@@ -1,0 +1,142 @@
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .centrer{
+    
+    align-items: center;
+  }
+
+  .border-voxio{
+    border-radius: 7px !important;
+    
+  }
+
+  .logo-carousel{
+     width:  31rem;
+     overflow : hidden;
+    
+  }
+
+
+
+
+
+
+.py-4{
+  justify-self: center;
+}
+
+
+
+.inset-0{
+  inset: 0px;
+}
+
+.h-25{
+  height: 2rem;
+}
+
+
+  .w-full{
+    max-width: 57rem;
+    
+  }
+
+  
+
+  .color-social{
+    color: rgb(255, 255, 255);
+    background-color: blue;
+  }
+
+  .grid-cols-2{
+    width: 336%;
+    margin-left: -17%;
+  }
+
+  .col-span-3{
+    grid-column: span 1 / span 3 !important;
+
+  }
+
+  .col-span-1{
+    grid-column: span 4 / span 3 !important;
+  }
+
+  .col-span-2{
+    grid-column: span 2 / span 2 !important;
+  }
+
+
+  @media (min-width: 768px) {
+    .md\:grid-cols-6 {
+        grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    }
+  }
+
+
+
+  .text-7xl{
+    font-size: 4.3rem !important;
+
+  }
+
+  .gap-12{
+    gap: 0rem !important;
+  }
+
+  /* .px-4{
+    padding-bottom: 17rem;
+  }  
+
+  */
+
+  
+
+  .border-black{
+    border-width: 0.1em;
+    border-radius: 0.75rem;
+    padding-top: 0.75rem !important;
+    background-color: hsla(0, 0%, 98%, .8);
+    border-color: rgb(0 0 0 / 0%) !important;
+    padding-bottom: 0.75rem !important; 
+  }
+
+  .border-white{
+    border-width: 0.1em;
+    background-color: rgba(6, 6, 6, .8);
+    border-color: rgb(23 23 23 / var(--tw-border-opacity));
+    --tw-border-opacity: 1;
+    border-radius: 0.75rem;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    
+  }
+
+  .button-voxio{
+    border-radius: 0.40rem !important;
+  }
+
+
+  .box-voxio{
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    padding-left: 1rem !important;
+    padding-right: 2rem !important;
+    background-color: transparent;
+    border-width: 0.1em;
+    border-color: white;
+    
+  }
+
+  .max-w-2xl{
+       max-width: 56rem !important;
+  }
+
+
+
+
