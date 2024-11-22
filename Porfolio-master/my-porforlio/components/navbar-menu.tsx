@@ -1,7 +1,6 @@
-// components/navbar-menu.tsx
 "use client";
 import React, { useState, useContext } from "react";
-import { Menu, MenuItem } from "./ui/navbar-menu";
+import { MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import { ThemeContext } from "../context/ThemeContext";
 import { Sun, Moon } from 'lucide-react';
@@ -22,19 +21,25 @@ function Navbar({ className }: { className?: string }) {
 
   return (
     <div className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}>
-      <nav className={cn(
-        "centrer relative rounded-full shadow-input flex justify-center space-x-4 px-8 py-6",
-        theme === "dark" ? "border-white" : "border-black"
-      )}>
+      <nav
+        className={cn(
+          "centrer relative rounded-full shadow-input flex justify-center space-x-4 px-8 py-6",
+          theme === "dark" ? "border-white" : "border-black"
+        )}
+      >
         <a href="/" className="navbar-container">
           <img src={logoSrc} alt="Brandify Logo" className="h-8" />
         </a>
-        <MenuItem setActive={setActive} active={active} item="Home" />
-        <MenuItem setActive={setActive} active={active} item="School" />
-        <MenuItem setActive={setActive} active={active} item="Projects" />
-        <MenuItem setActive={setActive} active={active} item="Blog" />
-        <MenuItem setActive={setActive} active={active} item="About" />
+        <ul className="flex space-x-4">
+          <MenuItem setActive={setActive} active={active} item="Home" href="/" />
+          <MenuItem setActive={setActive} active={active} item="School" href="/school" />
+          <MenuItem setActive={setActive} active={active} item="Projects" href="/projects" />
+          <MenuItem setActive={setActive} active={active} item="Blog" href="/blog" />
+          <MenuItem setActive={setActive} active={active} item="About" href="/about" />
+          <MenuItem setActive={setActive} active={active} item="Experience" href="/experience" />
+        </ul>
         <div className="flex gap-2 ml-auto">
+          {/* Bouton pour changer le thème */}
           <button
             onClick={() => toggleTheme(theme === "dark" ? "light" : "dark")}
             className={cn(

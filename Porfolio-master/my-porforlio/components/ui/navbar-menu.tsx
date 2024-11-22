@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 
+
 const transition = {
   type: "spring",
   mass: 0.5,
@@ -15,24 +16,24 @@ const transition = {
   restSpeed: 0.001,
 };
 
-
-export const MenuItem = ({
-  setActive,
-  active,
-  item,
-}: {
+interface MenuItemProps {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
-}) => {
+  href: string;
+}
+
+export const MenuItem = ({ setActive, active, item, href }: MenuItemProps) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative ">
-      <motion.p
-        transition={{ duration: 0.3 }}
-        className=" color-voxio cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
-      >
-        {item}
-      </motion.p>
+    <div onMouseEnter={() => setActive(item)} className="relative">
+      <Link href={href}>
+        <motion.p
+          transition={{ duration: 0.3 }}
+          className="color-voxio cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        >
+          {item}
+        </motion.p>
+      </Link>
     </div>
   );
 };

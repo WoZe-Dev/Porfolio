@@ -30,13 +30,33 @@
 }
 
 
+.about-full{
+  max-width: 57rem;
+}
+
+.rounded-full{
+  border-radius: inherit;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+      margin: auto;
+      margin-top: 10rem;
+  }
+}
+
 .h-\[100vh\]{
-  height: 130vh !important;
+  height: 102vh !important;
 }
 
 .md\:grid-cols-6{
   position: relative;
         top: 8rem;
+}
+
+.grid-cols-3{
+  margin: auto;
+  margin-top: 1rem;
 }
 
 
@@ -112,6 +132,10 @@
 
 .gap-4{
   gap: 0rem;
+}
+
+.h-screen{
+  height: auto;
 }
 
 .grid-cols-3{
