@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/utils/cn";
 import React, { ReactNode, useContext } from "react";
-import { ThemeContext } from "@/context/ThemeContext";
+import { ThemeContext } from "@/content/ThemeContext";
 
 
 

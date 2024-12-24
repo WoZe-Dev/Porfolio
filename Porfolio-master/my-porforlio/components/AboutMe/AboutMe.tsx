@@ -2,9 +2,15 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { m } from 'framer-motion';
 
+import Statistics from '@/components/AboutMe/Stastics';
+import Connaissance from '@/components/AboutMe/Connaissance';
 const AboutMe: React.FC = () => {
+
   return (
+    
+    <main className='bg-white dark:bg-black absolute inset-0 overflow-hidden"'>
     <div className="grid  about-full grid-cols-1 md:grid-cols-2 gap-8 items-center">
       {/* Section Texte */}
       <div>
@@ -54,17 +60,23 @@ const AboutMe: React.FC = () => {
       {/* Section Image */}
       <div className="flex justify-center">
         <div className="w-48 h-48 md:w-64 md:h-64">
-          <Image
+          <Image 
             src="Avatar.svg"
             alt="Votre Nom"
-            width={256}
-            height={256}
-            className="rounded-full object-cover"
+            width={1000}
+            height={1000}
+            className="bg-white"
           />
         </div>
       </div>
     </div>
+    
+    <Statistics></Statistics>
+    
+    <Connaissance></Connaissance>
+    </main>
   );
+  
 };
 
 export default AboutMe;

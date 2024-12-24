@@ -16,10 +16,16 @@
 }
 
 
-.bg-neutral-200{
-      border-top: solid;
-      background-color: hsl(0deg 0% 100%);
+
+
+
+.bggg-neutral-200{
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
+
+
+
+
 .rounded-lg{
     border-radius: 0.0rem;
 }
@@ -180,5 +186,4 @@ body {
     text-wrap: balance;
   }
 }
-
 

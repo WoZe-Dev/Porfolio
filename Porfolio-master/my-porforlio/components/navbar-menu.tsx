@@ -2,7 +2,7 @@
 import React, { useState, useContext } from "react";
 import { MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
-import { ThemeContext } from "../context/ThemeContext";
+import { ThemeContext } from "../content/ThemeContext";
 import { Sun, Moon } from 'lucide-react';
 
 export function NavbarDemo() {
