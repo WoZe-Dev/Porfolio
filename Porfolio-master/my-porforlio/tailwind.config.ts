@@ -24,6 +24,8 @@ const config: Config = {
     extend: {
       animation: {
         aurora: "aurora 60s linear infinite",
+        slideDown: "slideDown 0.3s ease-out",
+        slideUp: "slideUp 0.3s ease-out",
       },
       keyframes: {
         aurora: {
@@ -33,6 +35,14 @@ const config: Config = {
           to: {
             backgroundPosition: "350% 50%, 30% 50%",
           },
+        },
+        slideDown: {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        slideUp: {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       backgroundImage: {

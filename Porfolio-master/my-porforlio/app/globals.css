@@ -16,10 +16,18 @@
 }
 
 
-.bg-neutral-200{
-      border-top: solid;
-      background-color: hsl(0deg 0% 100%);
+
+.space-yy-3{
+  margin-left: 31rem;
 }
+
+.bggg-neutral-200{
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+}
+
+
+
+
 .rounded-lg{
     border-radius: 0.0rem;
 }
