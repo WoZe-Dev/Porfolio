@@ -16,13 +16,19 @@
 }
 
 
-
-
+.back-tags {
+  background-color: rgb(0 0 0);
+  color: white !important;
+}
 
 .bggg-neutral-200{
   background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 
+
+.py-8 {
+  padding-top: 9rem;
+}
 
 
 

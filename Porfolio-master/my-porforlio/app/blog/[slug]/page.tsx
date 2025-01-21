@@ -6,6 +6,9 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeStringify from 'rehype-stringify'
+import { NavbarDemo } from "@/components/navbar-menu"
+import { Clock, Calendar, ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
 
 // Types
 interface BlogPostMetadata {
@@ -37,17 +40,29 @@ function PostHeader({ metadata }: { metadata: BlogPostMetadata }) {
   const { title, subtitle, date, readingTime, tags } = metadata
 
   return (
-    <header className="pt-24 pb-16 px-4">
+    <header className="relative pt-24 pb-16 px-4 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),transparent)]
+        dark:bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.900),transparent)] opacity-20" />
+      
       <div className="max-w-4xl mx-auto">
-        <div className="space-y-4">
+        <Link 
+          href="/blog" 
+          className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors mb-8"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Retour à tous les articles
+        </Link>
+
+        <div className="space-y-6">
           {/* Tags */}
           {tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {tags.map(tag => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-sm bg-zinc-900 text-zinc-400 rounded-full
-                  border border-zinc-800 hover:border-zinc-700 transition-colors"
+                  className="px-3 py-1  back-tags text-indigo-200 rounded-full
+                    border border-indigo-800  transition-colors cursor-pointer"
                 >
                   {tag}
                 </span>
@@ -56,23 +71,29 @@ function PostHeader({ metadata }: { metadata: BlogPostMetadata }) {
           )}
 
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+          <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-gray-100">
             {title}
           </h1>
 
           {/* Subtitle */}
-          {subtitle && <p className="text-xl text-zinc-400">{subtitle}</p>}
+          {subtitle && (
+            <p className=" font-bold text-gray-900 dark:text-gray-100">
+              {subtitle}
+            </p>
+          )}
 
           {/* Metadata */}
-          <div className="flex flex-wrap gap-4 text-sm text-zinc-400 pt-4">
+          <div className="flex flex-wrap gap-6 text-sm text-zinc-400 pt-4 border-t border-zinc-800">
             {date && (
               <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
                 <span>{date}</span>
               </div>
             )}
             {readingTime && (
               <div className="flex items-center gap-2">
-                <span>{readingTime}</span>
+                <Clock className="w-4 h-4" />
+                <span>{readingTime} read</span>
               </div>
             )}
           </div>
@@ -86,19 +107,14 @@ function PostContent({ html }: { html: string }) {
   return (
     <main className="px-4 pb-24">
       <div className="max-w-4xl mx-auto">
-        <div className="prose prose-invert prose-lg max-w-none
-          prose-h2:text-2xl prose-h2:font-semibold prose-h2:tracking-tight
-          prose-p:text-zinc-400 prose-p:leading-relaxed
-          prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-white prose-strong:font-semibold
-          prose-code:text-zinc-200
-          prose-pre:bg-zinc-900 prose-pre:border prose-pre:border-zinc-800
-          prose-blockquote:border-l-4 prose-blockquote:border-blue-500
-          prose-blockquote:bg-zinc-900/50 prose-blockquote:px-6 prose-blockquote:py-4
-          prose-li:text-zinc-400
-          prose-img:rounded-lg prose-img:shadow-xl"
+        <div className="font-bold text-gray-900 dark:text-gray-100"
         >
           <div dangerouslySetInnerHTML={{ __html: html }} />
+        </div>
+
+        {/* Article Footer */}
+        <div className="mt-16 pt-8 border-t border-zinc-800">
+
         </div>
       </div>
     </main>
@@ -107,8 +123,18 @@ function PostContent({ html }: { html: string }) {
 
 function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black gap-4">
+      <div className="w-16 h-16 bg-red-950/50 rounded-full flex items-center justify-center">
+        <span className="text-2xl">🤔</span>
+      </div>
       <h1 className="text-4xl font-bold text-red-500">Article Not Found</h1>
+      <p className="text-zinc-400">The article you're looking for doesn't exist or has been moved.</p>
+      <Link 
+        href="/blog" 
+        className="mt-4 px-6 py-2 bg-zinc-900 text-zinc-300 rounded-full hover:bg-zinc-800 transition-colors"
+      >
+        Back to Blog
+      </Link>
     </div>
   )
 }
@@ -138,7 +164,7 @@ async function getBlogPost(slug: string): Promise<{
   const result = await unified()
     .use(remarkParse)
     .use(remarkRehype)
-    .use(rehypePrettyCode, rehypePrettyCodeOptions)
+    .use(rehypePrettyCode, )
     .use(rehypeStringify)
     .process(content)
 
@@ -159,7 +185,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const { metadata, content } = post
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black bg-white dark:bg-black text-white">
+      <NavbarDemo />
       <PostHeader metadata={metadata} />
       <PostContent html={content} />
     </div>

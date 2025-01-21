@@ -46,17 +46,10 @@ inset: 0px;
 height: 2rem;
 }
 
-
-.w-full{
-  max-width: 57rem;
-  
+.border-neutral-200{
+  margin-left: 26%;
+  margin-right: 26%;
 }
-
-
-.space-yy-3{
-  margin: auto;
-}
-
 
 
 .color-social{
@@ -95,6 +88,20 @@ height: 2rem;
   font-size: 4.3rem !important;
 
 }
+.text-6x0{
+  font-size: 3.75rem;
+}
+
+@media (min-width: 768px) {
+  .md\:py-13 {
+      transform: translateY(20%);
+  }
+}
+
+.py-13{
+  transform: translateY(-50%);
+}
+
 
 .gap-12{
   gap: 0rem !important;
