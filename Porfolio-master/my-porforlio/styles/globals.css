@@ -13,13 +13,7 @@
 .border-voxio{
   border-radius: 7px !important;
   
-
-
-
 }
-
-
-
 
 .logo-carousel{
    width:  31rem;
@@ -27,8 +21,35 @@
   
 }
 
+.p-6{
+  margin-top: 6rem;
+}
 
 
+.shadow{
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  border-top: 1px solid;
+  box-shadow : none
+  
+}
+
+
+.bg-neutral-200{
+  background-color: transparent  !important;
+}
+
+.md\:grid-cols-2{
+  margin-top: 7rem;
+}
+
+.mx-auto{
+  max-width: 57rem;
+}
+
+.vertical{
+  max-width: 56rem;  
+  margin: 0 auto;
+}
 
 
 
@@ -46,10 +67,12 @@ inset: 0px;
 height: 2rem;
 }
 
-.border-neutral-200{
-  margin-left: 26%;
-  margin-right: 26%;
+
+.w-full{
+  max-width: 57rem;
+  
 }
+
 
 
 .color-social{
@@ -88,20 +111,6 @@ height: 2rem;
   font-size: 4.3rem !important;
 
 }
-.text-6x0{
-  font-size: 3.75rem;
-}
-
-@media (min-width: 768px) {
-  .md\:py-13 {
-      transform: translateY(20%);
-  }
-}
-
-.py-13{
-  transform: translateY(-50%);
-}
-
 
 .gap-12{
   gap: 0rem !important;
@@ -154,6 +163,7 @@ height: 2rem;
 .max-w-2xl{
      max-width: 56rem !important;
 }
+
 
 
 

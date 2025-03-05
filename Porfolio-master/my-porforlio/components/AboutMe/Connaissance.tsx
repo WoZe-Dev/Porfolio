@@ -29,16 +29,15 @@ const Connaissance: React.FC = () => {
   ];
 
   const renderSkills = (skills: typeof generalSkills) => (
-    <div className="  flex flex-wrap gap-3">
+    <div className="flex  flex-wrap gap-3">
       {skills.map((skill, index) => (
         <div
           key={index}
           data-is-learning={skill.isLearning}
           data-is-bad={skill.isBad}
-          className="relative flex items-center justify-center gap-1 overflow-hidden rounded-2xl bg-neutral-900/5 p-4 leading-none data-[is-learning='true']:animate-pulse data-[is-bad='true']:opacity-50 dark:bg-neutral-300/5"
+          className="relative flex  items-center justify-center gap-1 overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 p-4 leading-none text-gray-900 dark:text-gray-100 data-[is-learning='true']:animate-pulse data-[is-bad='true']:opacity-50"
         >
           <span>
-            {/* Example Circle SVG */}
             <svg width="1em" height="1em" viewBox="0 0 128 128">
               <circle cx="64" cy="64" r="64" fill={skill.color} />
             </svg>
@@ -58,21 +57,21 @@ const Connaissance: React.FC = () => {
   );
 
   return (
-    <div className=" dark:bg-black dark:bg-black space-yy-3 w-full">
+    <div className=" dark:bg-black text-gray-900 dark:text-gray-100 dark:bg-black text-gray-900 dark:text-gray-100">
       {/* Section Header */}
-      <div className="flex items-center justify-center gap-1 text-xl font-medium md:justify-start">
+      <div className="flex items-center vertical justify-center gap-1 text-xl font-medium md:justify-start">
         <span>Connaissances</span>
       </div>
 
       {/* Accordion Root */}
-      <Accordion.Root type="multiple" className="w-full">
+      <Accordion.Root type="multiple">
         {/* Item 1: Compétences générales */}
         <Accordion.Item
           value="general-skills"
-          className="mt-px border-b border-neutral-200 dark:border-neutral-800"
+          className="mt-px border-b vertical border-gray-200 dark:border-gray-700"
         >
           <Accordion.Header>
-            <Accordion.Trigger className="group flex w-full items-center justify-between py-7 text-lg leading-none outline-none transition-colors hover:text-neutral-900 hover:underline dark:hover:text-neutral-300">
+            <Accordion.Trigger className="group flex w-full items-center justify-between py-7 text-lg leading-none outline-none transition-colors hover:text-gray-600 dark:hover:text-gray-300">
               <span>Compétences générales</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +86,7 @@ const Connaissance: React.FC = () => {
             </Accordion.Trigger>
           </Accordion.Header>
           <Accordion.Content className="overflow-hidden data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp">
-            <div className="p-4 text-neutral-900 dark:text-neutral-300">
+            <div className="p-4">
               {renderSkills(generalSkills)}
             </div>
           </Accordion.Content>
@@ -96,10 +95,10 @@ const Connaissance: React.FC = () => {
         {/* Item 2: Langages de programmation */}
         <Accordion.Item
           value="programming-skills"
-          className="mt-px border-b border-neutral-200 dark:border-neutral-800"
+          className="mt-px border-b vertical border-gray-200 dark:border-gray-700"
         >
           <Accordion.Header>
-            <Accordion.Trigger className="group flex w-full items-center justify-between py-7 text-lg leading-none outline-none transition-colors hover:text-neutral-900 hover:underline dark:hover:text-neutral-300">
+            <Accordion.Trigger className="group flex w-full items-center justify-between py-7 text-lg leading-none outline-none transition-colors hover:text-gray-600 dark:hover:text-gray-300">
               <span>Langages de programmation</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +113,7 @@ const Connaissance: React.FC = () => {
             </Accordion.Trigger>
           </Accordion.Header>
           <Accordion.Content className="overflow-hidden data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp">
-            <div className="p-4 text-neutral-900 dark:text-neutral-300">
+            <div className="p-4">
               {renderSkills(programmingSkills)}
             </div>
           </Accordion.Content>
@@ -123,10 +122,10 @@ const Connaissance: React.FC = () => {
         {/* Item 3: Développement Web */}
         <Accordion.Item
           value="web-skills"
-          className="mt-px border-b border-neutral-200 dark:border-neutral-800"
+          className="mt-px border-b vertical border-gray-200 dark:border-gray-700"
         >
           <Accordion.Header>
-            <Accordion.Trigger className="group flex w-full items-center justify-between py-7 text-lg leading-none outline-none transition-colors hover:text-neutral-900 hover:underline dark:hover:text-neutral-300">
+            <Accordion.Trigger className="group flex w-full items-center justify-between py-7 text-lg leading-none outline-none transition-colors hover:text-gray-600 dark:hover:text-gray-300">
               <span>Développement Web</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +140,7 @@ const Connaissance: React.FC = () => {
             </Accordion.Trigger>
           </Accordion.Header>
           <Accordion.Content className="overflow-hidden data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp">
-            <div className="p-4 text-neutral-900 dark:text-neutral-300">
+            <div className="p-4">
               {renderSkills(webSkills)}
             </div>
           </Accordion.Content>
