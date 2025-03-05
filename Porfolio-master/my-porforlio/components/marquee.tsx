@@ -12,8 +12,8 @@ const Marquee: React.FC = () => {
     <><AuroraBackgroundmarque>
       <div className=" box-textt   margin-text grid grid-cols-3  margin: auto; gap-4 items-center justify-center space-y-4 w-full h-screen flex">
 
-        <h2 className="text-xs opacity-70 col-span-4 sm:col-span-3">Full-Stack Developer</h2>
-        <p>
+        <h2 className="text-xs opacity-70 responsive col-span-4 sm:col-span-3 ">Full-Stack Developer</h2>
+        <p className='responsive'>
           <svg xmlns="http://www.w3.org/2000/svg" className="mr-1 inline fill-current" width="21" height="21" viewBox="0 0 256 256">
             <g>
               <path d="m213.27 104l-18-31.18a20 20 0 0 0-34.64 20l-28-48.5A20 20 0 0 0 98 64.31l-8-13.85a20 20 0 0 0-34.64 20l12 20.83l-1.17 1a20 20 0 0 0-29.49 25.88l38 65.83a80 80 0 0 0 138.57-80Zm-57.59 60.64l.17-.1l.14.24Z" opacity=".2"></path>
@@ -23,7 +23,7 @@ const Marquee: React.FC = () => {
           <span>Hello, welcome to my little corner on the web!</span>
         </p>
 
-        <p>
+        <p className='responsive'>
           I'm a self-taught code solutions programmer, I love programming and I try to use the most software architecture, clean and maintainable code. I like to work with technologies from the
           Javascript, Typescript,Python and Rust ecosystem <strong></strong> <strong></strong> <strong> </strong>{' '}
           <a href="https://www.javascript.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-px rounded-md border border-neutral-200 bg-neutral-200/30 px-1 text-sm transition hover:border-[rgba(240,219,79,.5)] hover:bg-[rgba(240,219,79,.1)] dark:border-neutral-800 dark:bg-neutral-800/30 dark:hover:border-[rgba(240,219,79,.5)] dark:hover:bg-[rgba(240,219,79,.1)]">
@@ -35,7 +35,7 @@ const Marquee: React.FC = () => {
             <span className="text-base">TypeScript</span>
           </a>, and other languages.
         </p>
-        <p>
+        <p className='responsive'>
           See more{' '}
           <a className="inline-flex items-center rounded-md px-1 font-medium text-black transition hover:bg-neutral-200/50 dark:text-white dark:hover:bg-neutral-800/50" href="/about">
             about me
@@ -47,7 +47,7 @@ const Marquee: React.FC = () => {
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
           </a>.
         </p>
-        <p>
+        <p className='responsive'>
           You can also learn something new on my{' '}
           <a className="inline-flex items-center rounded-md px-1 font-medium text-black transition hover:bg-neutral-200/50 dark:text-white dark:hover:bg-neutral-800/50" href="/blog">
             blog posts
@@ -60,7 +60,7 @@ const Marquee: React.FC = () => {
           </a>{' '}
           notes!
         </p>
-        <p>
+        <p className='responsive'>
           I'd love to hear your ideas and collaborate where possible!
         </p>
 
@@ -71,7 +71,7 @@ const Marquee: React.FC = () => {
 
 
 
-        <div className="relativee">
+        <div className="relativee phone ">
           <div className="h-fit md:sticky md:top-24 md:w-[23rem]">
             <div className="w-full space-y-4 rounded-xl border border-neutral-200 p-5 text-sm shadow-md dark:border-neutral-800">
               <header className="flex justify-between gap-3">
