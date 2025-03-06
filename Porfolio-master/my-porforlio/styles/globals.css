@@ -259,7 +259,7 @@ height: 2rem;
 
 .md\:grid-cols-6{
   position: relative;
-  top: 4rem;
+  top: 9rem;
 }
 
 
@@ -276,7 +276,7 @@ height: 2rem;
 }
 
 .h-\[100vh\]{
-  height: 113vh !important;
+  height: 127vh !important;
 }
 
 
