@@ -5,343 +5,97 @@
   width: 100%;
 }
 
-.centrer{
-  
-  align-items: center;
-}
-
-.border-voxio{
-  border-radius: 7px !important;
-  
-}
-
-.logo-carousel{
-   width:  31rem;
-   overflow : hidden;
-  
-}
-
-.p-6{
-  margin-top: 6rem;
-}
-
-
-.shadow{
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  border-top: 1px solid;
-  box-shadow : none
-  
-}
-
-
-.bg-neutral-200{
-  background-color: transparent  !important;
-}
-
-.md\:grid-cols-2{
-  margin-top: 7rem;
-}
-
-.mx-auto{
-  max-width: 57rem;
-}
-
-.vertical{
-  max-width: 56rem;  
-  margin: 0 auto;
-}
-
-
-
-.py-4{
-justify-self: center;
-}
-
-
-
-.inset-0{
-inset: 0px;
-}
-
-.h-25{
-height: 2rem;
-}
-
-
-.w-full{
-  max-width: 57rem;
-  
-}
-
-
-
-.color-social{
-  color: rgb(255, 255, 255);
-  background-color: blue;
-}
-
-.grid-cols-2{
-  width: 312%;
-  
-}
-
-.col-span-3{
-  grid-column: span 1 / span 3 !important;
-
-}
-
-.col-span-1{
-  grid-column: span 4 / span 3 !important;
-}
-
-.col-span-2{
-  grid-column: span 2 / span 2 !important;
-}
-
-
-@media (min-width: 768px) {
-  .md\:grid-cols-6 {
-      grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
-      
-  }
-}
-
-
-
-.text-7xl{
-  font-size: 4.3rem !important;
-
-}
-
-.gap-12{
-  gap: 0rem !important;
-}
-
-/* .px-4{
-  padding-bottom: 17rem;
-}  
-
-*/
-
-
-
-.border-black{
-  border-width: 0.1em;
-  border-radius: 0.75rem;
-  padding-top: 0.75rem !important;
-  background-color: hsla(0, 0%, 98%, .8);
-  border-color: rgb(0 0 0 / 0%) !important;
-  padding-bottom: 0.75rem !important; 
-}
-
-.border-white{
-  border-width: 0.1em;
-  background-color: rgba(6, 6, 6, .8);
-  border-color: rgb(23 23 23 / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  border-radius: 0.75rem;
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
-  
-}
-
-.button-voxio{
-  border-radius: 0.40rem !important;
-}
-
-
-
-
-@media (max-width: 950px)  {
-  .grid-cols-5{
-  
-    .md\:w-96 {
-      width: 22rem;
-  }
-
-  }
-}
-
-@media (max-width: 890px)  {
-  .grid-cols-5{
-  
-    .md\:w-96 {
-      width: 20rem;
-  }
-
-  }
-}
-
-
-@media (max-width: 850px)  {
-  .grid-cols-5{
-  
-    .md\:w-96 {
-      width: 20rem;
-      font-size: 0.9rem;
-      margin-right: 190%;
-  }
-
-  }
-}
-
-@media (max-width: 800px)  {
-  .grid-cols-5{
-  
-    .md\:w-96 {
-      width: 19rem;
-
-      margin-right: 190%;
-  }
-
-  }
-}
-
-
-
-
-@media (max-width: 860px)  {
-  .responsive{
-  
-    width: 23.5rem;
-    margin-left: 1.5rem;
-    font-size: 91%;
-
-  }
-}
-
-@media (max-width: 430px)  {
-  .phone{
-  
-    position: relative;
-    top: 1rem;
-    margin-left: 2rem;
-
-  }
-}
-
-
-@media (max-width: 860px)  {
-  .phone{
-  
-    margin-right: 2rem;
-
-  }
-}
-
-@media (max-width: 430px)  {
-  .col-span-3{
-    grid-column: span 2 / span 3 !important;
-
-  }
-  .w-24{
-    width: 6rem;
-    height: 9rem;
-  }
-
-  .grid-cols-2{
-    width: 242%;
-    position: relative;
-    right: 2rem;
-    
-  }
-
-  .rounded-lg {
-    border-radius: 0.3rem;
-}
-
-.Mlmwz{
-  margin-top: -140px !important;
-  margin-left: -6rem !important;
-  width: 270% !important;
-  height: 104% !important;
-}
-
-.md\:grid-cols-6{
-  position: relative;
-  top: 9rem;
-}
-
-
-.grid-cols-5{
-  position: relative;
-  top: 15rem;
-  margin-left: -15rem;
-  width: auto;
-}
-
-.md\:w-96{
- 
-  width: 25rem !important;
-}
-
-.h-\[100vh\]{
-  height: 124vh !important;
-}
-
-.text-7xl{
-  text-align: center;
-  font-size: 3.5rem !important;
-}
-
-.top-1\/2 {
-  top: 13%;
-}
-
-.w-96 {
-  width: 22rem;
-}
-
-
-}
-
-
-
-
-
-.box-voxio{
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
-  padding-left: 1rem !important;
-  padding-right: 2rem !important;
-  background-color: transparent;
-  border-width: 0.1em;
-  border-color: white;
-  
-}
-
-.max-w-2xl{
-     max-width: 56rem !important;
-}
-
-
-
-
-
-
-.navbar-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .centrer {
   align-items: center;
 }
 
-/* Dark mode styles */
-.dark .border-white {
-  border-width: 0.1em;
-  background-color: rgba(6, 6, 6, .8);
-  border-color: rgb(23 23 23 / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  border-radius: 0.75rem;
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
+.border-voxio {
+  border-radius: 7px !important;
 }
 
-/* Light mode styles */
+.logo-carousel {
+   width: 31rem;
+   overflow: hidden;
+}
+
+.p-6 {
+  margin-top: 6rem;
+}
+
+.shadow {
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  border-top: 1px solid;
+  box-shadow: none;
+}
+
+.bg-neutral-200 {
+  background-color: transparent !important;
+}
+
+.md\:grid-cols-2 {
+  margin-top: 7rem;
+}
+
+.mx-auto {
+  max-width: 57rem;
+}
+
+.vertical {
+  max-width: 56rem;  
+  margin: 0 auto;
+}
+
+.py-4 {
+  justify-self: center;
+}
+
+.inset-0 {
+  inset: 0px;
+}
+
+.h-25 {
+  height: 2rem;
+}
+
+.w-full {
+  max-width: 57rem;
+}
+
+.color-social {
+  color: rgb(255, 255, 255);
+  background-color: blue;
+}
+
+.grid-cols-2 {
+  width: 312%;
+}
+
+.col-span-3 {
+  grid-column: span 1 / span 3 !important;
+}
+
+.col-span-1 {
+  grid-column: span 4 / span 3 !important;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2 !important;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-6 {
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+  }
+}
+
+.text-7xl {
+  font-size: 4.3rem !important;
+}
+
+.gap-12 {
+  gap: 0rem !important;
+}
+
 .border-black {
   border-width: 0.1em;
   border-radius: 0.75rem;
@@ -349,32 +103,143 @@ height: 2rem;
   background-color: hsla(0, 0%, 98%, .8);
   border-color: rgb(0 0 0 / 0%) !important;
   padding-bottom: 0.75rem !important; 
+  backdrop-filter: blur(8px);
+}
+
+.border-white {
+  border-width: 0.1em;
+  background-color: rgba(6, 6, 6, .8);
+  border-color: rgb(23 23 23 / var(--tw-border-opacity));
+  --tw-border-opacity: 1;
+  border-radius: 0.75rem;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  backdrop-filter: blur(8px);
 }
 
 .button-voxio {
   border-radius: 0.40rem !important;
 }
 
+/* Media Queries */
+@media (max-width: 950px) {
+  .grid-cols-5 .md\:w-96 {
+    width: 22rem;
+  }
+}
+
+@media (max-width: 890px) {
+  .grid-cols-5 .md\:w-96 {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .grid-cols-5 .md\:w-96 {
+    width: 20rem;
+    font-size: 0.9rem;
+    margin-right: 190%;
+  }
+}
+
+@media (max-width: 800px) {
+  .grid-cols-5 .md\:w-96 {
+    width: 19rem;
+    margin-right: 190%;
+  }
+}
+
+@media (max-width: 860px) {
+  .responsive {
+    width: 23.5rem;
+    margin-left: 1.5rem;
+    font-size: 91%;
+  }
+}
+
+@media (max-width: 430px) {
+  .phone {
+    position: relative;
+    top: 1rem;
+    margin-left: 2rem;
+  }
+
+  .col-span-3 {
+    grid-column: span 2 / span 3 !important;
+  }
+
+  .w-24 {
+    width: 6rem;
+    height: 9rem;
+  }
+
+  .grid-cols-2 {
+    width: 242%;
+    position: relative;
+    right: 2rem;
+  }
+
+  .rounded-lg {
+    border-radius: 0.3rem;
+  }
+
+  .Mlmwz {
+    margin-top: -140px !important;
+    margin-left: -6rem !important;
+    width: 270% !important;
+    height: 104% !important;
+  }
+
+  .md\:grid-cols-6 {
+    position: relative;
+    top: 9rem;
+  }
+
+  .grid-cols-5 {
+    position: relative;
+    top: 15rem;
+    margin-left: -15rem;
+    width: auto;
+  }
+
+  .md\:w-96 {
+    width: 25rem !important;
+  }
+
+  .h-\[100vh\] {
+    height: 124vh !important;
+  }
+
+  .text-7xl {
+    text-align: center;
+    font-size: 3.5rem !important;
+  }
+
+  .top-1\/2 {
+    top: 13%;
+  }
+
+  .w-96 {
+    width: 22rem;
+  }
+}
+
+.box-voxio {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  padding-left: 1rem !important;
+  padding-right: 2rem !important;
+  background-color: transparent;
+  border-width: 0.1em;
+  border-color: white;
+}
+
 .max-w-2xl {
   max-width: 56rem !important;
 }
 
-/* Mobile menu transition */
-.mobile-menu-enter {
-  transform: translateX(100%);
+/* Mobile menu blur effect */
+.mobile-menu-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
-
-.mobile-menu-enter-active {
-  transform: translateX(0);
-  transition: transform 300ms ease-in-out;
-}
-
-.mobile-menu-exit {
-  transform: translateX(0);
-}
-
-.mobile-menu-exit-active {
-  transform: translateX(100%);
-  transition: transform 300ms ease-in-out;
-}
-
