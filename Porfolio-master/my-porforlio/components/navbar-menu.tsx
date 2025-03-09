@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useContext } from "react";
 import { MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
@@ -42,7 +43,6 @@ function Navbar({ className }: { className?: string }) {
             <img src={logoSrc} alt="Brandify Logo" className="h-8" />
           </a>
           
-          {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-4">
             {menuItems.map((item) => (
               <MenuItem key={item.name} setActive={setActive} active={active} item={item.name} href={item.href} />
@@ -66,7 +66,6 @@ function Navbar({ className }: { className?: string }) {
               )}
             </button>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden inline-flex items-center button-voxio justify-center rounded-md text-sm font-medium h-9 w-9 px-2"
@@ -82,10 +81,10 @@ function Navbar({ className }: { className?: string }) {
         </nav>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay with Blur Effect */}
       <div
         className={cn(
-          "fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300",
+          "fixed inset-0 backdrop-blur-md bg-white/30 dark:bg-black/30 z-40 md:hidden transition-all duration-300",
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
         onClick={() => setIsMenuOpen(false)}
@@ -94,7 +93,7 @@ function Navbar({ className }: { className?: string }) {
       {/* Mobile Menu Sidebar */}
       <div
         className={cn(
-          "fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out md:hidden",
+          "fixed top-0 right-0 h-full w-64 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-50 transform transition-transform duration-300 ease-in-out md:hidden shadow-xl",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -102,7 +101,7 @@ function Navbar({ className }: { className?: string }) {
           <div className="p-4">
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="ml-auto flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800"
+              className="ml-auto flex items-center justify-center w-8 h-8 rounded-full bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm"
             >
               <X className="h-4 w-4" />
             </button>
@@ -115,7 +114,7 @@ function Navbar({ className }: { className?: string }) {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+                  className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 rounded-lg backdrop-blur-sm"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Icon className="h-5 w-5" />
@@ -125,12 +124,12 @@ function Navbar({ className }: { className?: string }) {
             })}
           </nav>
 
-          <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+          <div className="p-4 border-t border-gray-200/50 dark:border-gray-700/50">
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+              className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 rounded-lg backdrop-blur-sm"
             >
               <ExternalLink className="h-5 w-5" />
               <span>Github</span>
@@ -141,3 +140,5 @@ function Navbar({ className }: { className?: string }) {
     </>
   );
 }
+
+export default Navbar;
