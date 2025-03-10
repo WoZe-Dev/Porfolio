@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import { ThemeContext } from "../content/ThemeContext";
@@ -20,6 +20,28 @@ function Navbar({ className }: { className?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const logoSrc = theme === "dark" ? "/voxio.svg" : "/img-ilia.svg";
+
+  // Add effect to control body scroll
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Prevent scrolling on body when menu is open
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      // Re-enable scrolling when menu is closed
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
+
+    // Cleanup effect
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    };
+  }, [isMenuOpen]);
 
   const menuItems = [
     { name: "Home", href: "/", icon: Home },
@@ -93,7 +115,7 @@ function Navbar({ className }: { className?: string }) {
       {/* Mobile Menu Sidebar */}
       <div
         className={cn(
-          "fixed top-0 right-0 h-full w-64 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-50 transform transition-transform duration-300 ease-in-out md:hidden shadow-xl",
+          "fixed top-0 right-0 h-full w-64 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-50 transform transition-transform duration-300 ease-in-out md:hidden shadow-xl overflow-y-auto",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >

@@ -207,8 +207,11 @@
   }
 
   .h-\[100vh\] {
-    height: 124vh !important;
+    height: 160vh !important;
   }
+
+
+  
 
   .text-7xl {
     text-align: center;
@@ -219,9 +222,14 @@
     top: 13%;
   }
 
+
+ 
+
   .w-96 {
     width: 22rem;
   }
+
+
 }
 
 .box-voxio {
