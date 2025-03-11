@@ -13,13 +13,7 @@ export function AuroraBackgroundDemo() {
     <AuroraBackground>
       
       <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
+
         className="relative flex flex-col items-center justify-between h-fit w-full px-4"
       >
         <div className="absolute -z-50 h-64 w-64 bg-[conic-gradient(transparent,rgb(0,0,0))] opacity-15 blur-2xl dark:bg-[conic-gradient(transparent,rgb(255,255,255))] md:left-36"></div>

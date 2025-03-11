@@ -161,6 +161,7 @@
   .phone {
     position: relative;
     top: 1rem;
+    right: 5%;
     margin-left: 2rem;
   }
 
@@ -197,9 +198,9 @@
 
   .grid-cols-5 {
     position: relative;
+    width: 210%;
     top: 15rem;
     margin-left: -15rem;
-    width: auto;
   }
 
   .md\:w-96 {
@@ -207,7 +208,7 @@
   }
 
   .h-\[100vh\] {
-    height: 160vh !important;
+    height: 170vh !important;
   }
 
 
@@ -222,12 +223,17 @@
     top: 13%;
   }
 
+  .inset-0{
+    inset: -1rem;
+  }
 
  
 
   .w-96 {
     width: 22rem;
   }
+
+ 
 
 
 }
