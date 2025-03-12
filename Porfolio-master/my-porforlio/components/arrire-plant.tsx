@@ -13,7 +13,7 @@ export function AuroraBackgroundDemo() {
     <AuroraBackground>
       
       <motion.div
-
+        
         className="relative flex flex-col items-center justify-between h-fit w-full px-4"
       >
         <div className="absolute -z-50 h-64 w-64 bg-[conic-gradient(transparent,rgb(0,0,0))] opacity-15 blur-2xl dark:bg-[conic-gradient(transparent,rgb(255,255,255))] md:left-36"></div>
