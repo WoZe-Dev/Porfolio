@@ -51,6 +51,7 @@
 
 .inset-0 {
   inset: 0px;
+  top: 2rem;
 }
 
 .h-25 {
@@ -94,6 +95,7 @@
 
 .gap-12 {
   gap: 0rem !important;
+  margin-left: 1rem;
 }
 
 .border-black {
@@ -124,7 +126,8 @@
 /* Media Queries */
 @media (max-width: 950px) {
   .grid-cols-5 .md\:w-96 {
-    width: 22rem;
+    
+    margin-left: 183%;
   }
 }
 
@@ -161,7 +164,7 @@
   .phone {
     position: relative;
     top: 1rem;
-    right: 5%;
+    right: 1%;
     margin-left: 2rem;
   }
 
@@ -170,14 +173,15 @@
   }
 
   .w-24 {
-    width: 6rem;
+    width: 5rem;
     height: 9rem;
+    margin-left: 1rem;
   }
 
   .grid-cols-2 {
     width: 242%;
     position: relative;
-    right: 2rem;
+    right: 1rem;
   }
 
   .rounded-lg {
@@ -204,12 +208,16 @@
   }
 
   .md\:w-96 {
-    width: 25rem !important;
+    width: 22rem !important;
+  }
+
+  .will-change-transform{
+    will-change: auto;
   }
 
   .h-\[100vh\] {
-    height: 170vh !important;
-    margin-right: 17px;
+    height: 119vh !important;
+    margin-right: 0rem;
     margin-left: -1rem;
   }
 
@@ -228,19 +236,37 @@
     top: 13%;
   }
 
-  .inset-0{
-    inset: -1rem;
-  }
+
 
  
 
   .w-96 {
     width: 22rem;
+    margin-left: 1rem;
   }
 
+  .text-2xl{
+    margin-left: -1rem;
+  }
  
+  .h-screen{
+    margin-top: 14rem;
+  }
+
+}
 
 
+@media (max-width: 414px) {
+  .h-\[100vh\]{
+    height: 119vh !important;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .h-\[100vh\]{
+    height: 155vh !important;
+  }
 }
 
 .box-voxio {
