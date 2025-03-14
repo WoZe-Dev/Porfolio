@@ -12,6 +12,30 @@
 .border-voxio {
   border-radius: 7px !important;
 }
+.inset-0{
+  top: 0rem !important;
+}
+
+.bg-white\/80{
+  background-color: rgb(255 255 255);
+  border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+
+}
+
+.dark\:bg-gray-900\/80:is(.dark *){
+  background-color: rgb(0 0 0); 
+}
+
+
+.dark\:bg-gray-800\/50:is(.dark *){
+  background-color: rgb(31 41 55 / 0%);
+}
+
+.bg-gray-100\/50{
+  background-color: rgb(243 244 246 / 0%);
+}
+
 
 .logo-carousel {
    width: 31rem;
@@ -168,6 +192,10 @@
     margin-left: 2rem;
   }
 
+  .inset-0{
+    top: 0rem;
+  }
+
   .col-span-3 {
     grid-column: span 2 / span 3 !important;
   }
@@ -246,7 +274,7 @@
   }
 
   .text-2xl{
-    margin-left: -1rem;
+    margin-left: -2rem;
   }
  
   .h-screen{
@@ -266,6 +294,10 @@
 @media (max-width: 375px) {
   .h-\[100vh\]{
     height: 155vh !important;
+    
+  }
+  .inset-0 {
+    top: 0rem;
   }
 }
 
@@ -288,3 +320,5 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
+
+
