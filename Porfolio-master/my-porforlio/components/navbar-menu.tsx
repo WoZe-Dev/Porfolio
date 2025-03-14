@@ -125,7 +125,7 @@ function Navbar({ className }: { className?: string }) {
               onClick={() => setIsMenuOpen(false)}
               className="ml-auto flex items-center justify-center w-8 h-8 rounded-full bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4 text-black dark:text-white" />
             </button>
           </div>
 
