@@ -27,11 +27,11 @@ const Marquee: React.FC = () => {
           I'm a self-taught code solutions programmer, I love programming and I try to use the most software architecture, clean and maintainable code. I like to work with technologies from the
           Javascript, Typescript,Python and Rust ecosystem <strong></strong> <strong></strong> <strong> </strong>{' '}
           <a href="https://www.javascript.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-px rounded-md border border-neutral-200 bg-neutral-200/30 px-1 text-sm transition hover:border-[rgba(240,219,79,.5)] hover:bg-[rgba(240,219,79,.1)] dark:border-neutral-800 dark:bg-neutral-800/30 dark:hover:border-[rgba(240,219,79,.5)] dark:hover:bg-[rgba(240,219,79,.1)]">
-            <svg width="1em" height="1em" viewBox="0 0 128 128"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"></path><path fill="#323330" d="M116.347 96.736..."></path></svg>
+            <svg width="1em" height="1em" viewBox="0 0 128 128"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"></path><path fill="#323330" ></path></svg>
             <span className="text-base">JavaScript</span>
           </a>,{' '}
           <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-px rounded-md border border-neutral-200 bg-neutral-200/30 px-1 text-sm transition hover:border-[rgba(0,122,204,.5)] hover:bg-[rgba(0,122,204,.1)] dark:border-neutral-800 dark:bg-neutral-800/30 dark:hover:border-[rgba(0,122,204,.5)] dark:hover:bg-[rgba(0,122,204,.1)]">
-            <svg width="1em" height="1em" viewBox="0 0 128 128"><path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path><path data-name="original" fill="#007acc" d="M1.5 63.91..."></path></svg>
+            <svg width="1em" height="1em" viewBox="0 0 128 128"><path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path><path data-name="original" fill="#007acc" ></path></svg>
             <span className="text-base">TypeScript</span>
           </a>, and other languages.
         </p>
