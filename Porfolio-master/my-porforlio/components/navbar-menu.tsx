@@ -87,16 +87,19 @@ function Navbar({ className }: { className?: string }) {
                 <Moon className="h-[1.2rem] w-[1.2rem]" />
               )}
             </button>
-
+ 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden inline-flex items-center button-voxio justify-center rounded-md text-sm font-medium h-9 w-9 px-2"
+              className={cn(
+              "md:hidden inline-flex items-center button-voxio justify-center rounded-md text-sm font-medium h-9 w-9 px-2",
+              theme === "dark" ? "text-white" : "text-black"
+              )}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <X className="h-[1.2rem] w-[1.2rem]" />
+              <X className="h-[1.2rem] w-[1.2rem]" />
               ) : (
-                <Menu className="h-[1.2rem] w-[1.2rem]" />
+              <Menu className="h-[1.2rem] w-[1.2rem]" />
               )}
             </button>
           </div>
