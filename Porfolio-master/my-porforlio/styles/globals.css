@@ -9,6 +9,34 @@
   align-items: center;
 }
 
+.inset-0{
+  inset: auto;
+}
+
+.logo-svg-nextjs {
+  transition: border 0.3s ease;
+}
+
+.logo-svg-nextjs:hover {
+  border: 2px solid #000; /* Couleur du logo Next.js */
+}
+
+.logo-svg-ts {
+  transition: border 0.3s ease;
+}
+
+.logo-svg-ts:hover {
+  border: 2px solid #007acc; /* Couleur du logo TypeScript */
+}
+
+.logo-svg {
+  transition: border 0.3s ease;
+}
+
+.logo-svg:hover {
+  border: 2px solid #F0DB4F; /* Couleur du logo */
+}
+
 .border-voxio {
   border-radius: 7px !important;
 }
@@ -76,7 +104,7 @@
 }
 
 .inset-0 {
-  inset: 0px;
+  
   top: 2rem;
 }
 
@@ -238,6 +266,7 @@
 
   .inset-0{
     top: 0rem;
+    
   }
 
   .col-span-3 {
@@ -336,6 +365,7 @@
 }
 
 
+
 @media (max-width: 390px) {
   .h-screen {
     margin-top: 5rem;
@@ -363,7 +393,7 @@
 }
 
 .h-\[100vh\] {
-  height: 142vh !important;
+  height: 109vh !important;
 }
 
 
