@@ -9,6 +9,8 @@
   align-items: center;
 }
 
+
+
 .inset-0{
   inset: auto;
 }
@@ -51,7 +53,9 @@
 
 }
 
-
+.mr-2 {
+  margin-right: 0.2rem;
+}
 
 .dark\:bg-gray-900\/80:is(.dark *){
   background-color: rgb(0 0 0); 
