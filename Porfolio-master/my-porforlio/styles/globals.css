@@ -302,6 +302,19 @@ font-size: 0.775rem;
     margin-left: 2rem;
   }
 
+  .text-4xl {
+    font-size: 1.5rem;
+    margin-left : 3rem;
+  }
+
+  .col-span-2{
+    display: none;
+  }
+
+  .opacity-10 {
+    opacity: 0.2;
+}
+
   .gap-4{
     margin-top: 0rem;
   }
@@ -326,9 +339,12 @@ font-size: 0.775rem;
     top: 0rem;
     
   }
+  
 
   .col-span-3 {
-    grid-column: span 2 / span 3 !important;
+    grid-column: span 3 / span 3 !important;
+    margin-right: -1.0rem;
+        margin-left: 0.5rem;
   }
 
   .grid-cols-5 {
@@ -339,12 +355,12 @@ font-size: 0.775rem;
 
   .w-24 {
     height: 9rem;
-    margin-left: 1rem;
+    margin-left: 0rem;
   }
 
 
   .grid-cols-2 {
-    width: 18rem;
+    width: 19.5rem;
     position: relative;
   }
 
@@ -361,7 +377,7 @@ font-size: 0.775rem;
 
   .md\:grid-cols-6 {
     position: relative;
-    top: 9rem;
+    top: 12rem;
   }
 
   .grid-cols-5 {
@@ -379,7 +395,7 @@ font-size: 0.775rem;
   }
 
   .h-\[100vh\] {
-    height: 157vh !important;
+    height: 129vh !important;
     margin-right: 0rem;
     margin-left: -1rem;
   }
@@ -421,14 +437,48 @@ font-size: 0.775rem;
 
 @media (max-width: 414px) {
   .h-\[100vh\]{
-    height: 119vh !important;
+    height: 127vh !important;
   }
 
     .opacity-10 {
     opacity: 0.2;
 }
 
+.grid-cols-2 {
+  width: 18.5rem;
 }
+
+.kIlWUE {
+  width: 24rem !important;
+}
+
+
+
+}
+
+
+
+
+
+@media (max-width: 412px){
+
+  .grid-cols-2{
+    width: 18.5rem;
+  }
+  .kIlWUE{
+    width: 24rem !important;
+  }
+
+  .h-\[100vh\] {
+    height: 129vh !important;
+}
+  
+  
+
+}
+
+
+
 
 
 
@@ -438,6 +488,36 @@ font-size: 0.775rem;
 }
 .w-24{
   width: 5rem;
+}
+
+.col-span-2{
+  display: none;
+}
+
+.text-4xl {
+  font-size: 1.5rem;
+}
+.text-2xl {
+  margin-left: 1rem;
+}
+
+.text-7xl {
+  margin-left: 2rem;
+}
+
+.col-span-1 {
+  margin-right: 0.3rem;
+  margin-left: 1rem;
+}
+
+.grid-cols-2 {
+  width: 18rem;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3 !important;
+  margin-right: -0.5rem;
+  margin-left: 1.5rem;
 }
 
 .md\:grid-cols-6{
@@ -461,9 +541,13 @@ font-size: 0.775rem;
 
 @media (max-width: 375px) {
   .h-\[100vh\]{
-    height: 182vh !important;
+    height: 167vh !important;
     
   }
+
+  .h-screen {
+    margin-top: -1rem;
+}
 
   .grid-cols-5{
 
@@ -471,15 +555,28 @@ font-size: 0.775rem;
   }
   .responsive{
     margin-left: 4.5rem;
-    width: 19.5rem;
+    width: 24rem;
+    font-size: 83%;
   }
+  .md\:w-96 {
+    width: 24rem !important;
+    margin-left: 1rem;
+}
 
   .w-24{
-    margin-left: 1.8rem;
+    margin-left: -0.2rem;
   }
+
+  .kIlWUE {
+    width: 23rem !important;
+}
 
   .col-span-2 {
     margin-left: 2rem;
+}
+
+.grid-cols-2 {
+  width: 17rem;
 }
 
   .col-span-1{
