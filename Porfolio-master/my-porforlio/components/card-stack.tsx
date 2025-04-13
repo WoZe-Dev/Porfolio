@@ -30,42 +30,72 @@ export const Highlight = ({
 };
 
 const CARDS = [
-  {
-    id: 0,
-    name: "Manu Arora",
-    designation: "Senior Software Engineer",
-    content: (
-      <p>
-        These cards are amazing, <Highlight>I want to use them</Highlight> in my
-        project. Framer motion is a godsend ngl tbh fam 🙏
-      </p>
-    ),
-  },
-  {
-    id: 1,
-    name: "Elon Musk",
-    designation: "Senior Shitposter",
-    content: (
-      <p>
-        I dont like this Twitter thing,{" "}
-        <Highlight>deleting it right away</Highlight> because yolo. Instead, I
-        would like to call it <Highlight>X.com</Highlight> so that it can easily
-        be confused with adult sites.
-      </p>
-    ),
-  },
+
+
+
+  
   {
     id: 2,
-    name: "Tyler Durden",
-    designation: "Manager Project Mayhem",
     content: (
-      <p>
-        The first rule of
-        <Highlight>Fight Club</Highlight> is that you do not talk about fight
-        club. The second rule of
-        <Highlight>Fight club</Highlight> is that you DO NOT TALK about fight
-        club.
+      <p className="text-smm text-neutral-700 dark:text-neutral-200">
+           Cérez une application SaaS prête pour la production en <Highlight>TypeScript</Highlight>{" "}
+        <br />
+        <br />
+        Apprenez à créer une application SaaS évolutive et prête pour la production avec <Highlight>Encore.ts </Highlight>et <Highlight>Next.js</Highlight> Ce modèle intègre Clerk pour l'authentification, Stripe pour les paiements et utilise Tailwind et shadcn/ui pour le style.
+        <a
+          href="https://dev.to/encore/build-a-production-ready-saas-application-44nb?ref=dailydev"
+          className="mt-4 inline-block text-emerald-600 hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Lire l'article
+        </a>
       </p>
+       
     ),
   },
+
+  {
+    id: 1,
+    name: "Ilia Choumitzky",
+    designation: "Développeur Full-Stack",
+    content: (
+      <p className="text-smm text-neutral-700 dark:text-neutral-200">
+         ⚠️ Recherche une <Highlight>Alternance</Highlight> pour mon <Highlight>Master</Highlight> ⚠️ {" "}
+        <br />
+        <br />
+        Je suis actuellement en Bachelor d'ingénierie du web en alternance chez Tricycle Environnement et je cherche une entreprise pour continuer mes études en Master à l'ESGI à partir de septembre 2025.
+ 
+
+      </p>
+       
+    ),
+
+ },
+
+
+
+  {
+    id: 3,
+    content: (
+      <p className="text-smm text-neutral-700 dark:text-neutral-200">
+           Un premier aperçu des nouvelles fonctionnalités et modifications de <Highlight> PHP 9.0</Highlight> {" "}
+        <br />
+        <br />
+        PHP 9.0 introduit plusieurs modifications, notamment un meilleur comportement d'incrémentation/décrémentation, une meilleure gestion des erreurs de désérialisation, des signatures de fonctions simplifiées, des règles de création de tableaux plus strictes 
+        <br />
+        <a
+          href="https://benjamincrozat.com/php-90?ref=dailydev"
+          className="mt-4 inline-block text-emerald-600 hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Lire l'article
+        </a>
+      </p>
+      
+       
+    ),
+  },
+
 ];
