@@ -9,6 +9,37 @@
   align-items: center;
 }
 
+.text-smm{
+font-size: 0.775rem;
+}
+
+
+
+
+.bottom-13{
+  bottom: -1rem !important;
+}
+
+.rounded-full{
+  border-radius: 9999px !important;
+}
+
+.animate-spin{
+  animation: spin 21s linear infinite;
+}
+
+.side-textt{
+  --tw-scale-x: -1;
+    --tw-scale-y: -1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    writing-mode: vertical-rl;
+}
+
+.w-24{
+  height: 9rem;
+  width: 7rem;
+}
+
 
 
 .inset-0{
@@ -122,11 +153,16 @@
 
 .color-social {
   color: rgb(255, 255, 255);
-  background-color: blue;
+  background-color: #ff4500;
+}
+
+.color-sociall {
+  color: rgb(255, 255, 255);
+  background-color: #000000;
 }
 
 .grid-cols-2 {
-  width: 312%;
+  width: 24rem;
 }
 
 .col-span-3 {
@@ -249,6 +285,15 @@
 
 
 
+@media (min-width: 1900px){
+
+  .mobile{
+    display: none;
+  }
+  
+
+}
+
 @media (max-width: 430px) {
   .phone {
     position: relative;
@@ -258,15 +303,24 @@
   }
 
   .gap-4{
-    margin-top: -10rem;
+    margin-top: 0rem;
   }
 
-  
-  
-  .dIUlKr{
-    right: 70% !important;
-    width: 274% !important;
+  .pc{
+    display: none;
   }
+ 
+
+  .kIlWUE{
+    width: 26rem !important;
+  }
+
+  .h-\[100vh\] {
+    height: 132vh !important;
+}
+  
+  
+ 
 
   .inset-0{
     top: 0rem;
@@ -277,6 +331,12 @@
     grid-column: span 2 / span 3 !important;
   }
 
+  .grid-cols-5 {
+
+    width: auto;
+
+}
+
   .w-24 {
     height: 9rem;
     margin-left: 1rem;
@@ -284,14 +344,12 @@
 
 
   .grid-cols-2 {
-    width: 232%;
+    width: 18rem;
     position: relative;
-    
-    right: 1rem;
   }
 
   .rounded-lg {
-    border-radius: 0.5rem;
+    border-radius: 0.5rem !important;
   }
 
   .Mlmwz {
@@ -308,7 +366,6 @@
 
   .grid-cols-5 {
     position: relative;
-    width: 210%;
     top: 15rem;
     margin-left: -15rem;
   }
@@ -339,7 +396,7 @@
   }
 
   .top-1\/2 {
-    top: -12%;
+    top: 16%;
   }
 
 
@@ -366,6 +423,11 @@
   .h-\[100vh\]{
     height: 119vh !important;
   }
+
+    .opacity-10 {
+    opacity: 0.2;
+}
+
 }
 
 
@@ -394,10 +456,6 @@
 
 
 
-}
-
-.h-\[100vh\] {
-  height: 109vh !important;
 }
 
 

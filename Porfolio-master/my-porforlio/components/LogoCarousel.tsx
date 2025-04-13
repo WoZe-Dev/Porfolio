@@ -1,18 +1,35 @@
 import React, { useState, useEffect } from 'react'
 import styled, { keyframes, css } from 'styled-components'
 
-const logos = [
-  'css.svg',
-  'pythonn.svg',
-  'html.svg',
-  'html.svg',
-  'html.svg',
-  'html.svg',
-  'html.svg',
-  'pythonn.svg',
-  'pythonn.svg',
-  'pythonn.svg',
-  'pythonn.svg',
+/**
+ * Tableau pour la première ligne (défilement normal)
+ */
+const logosLine1 = [
+  'next-js.256x256.png',
+  'tailwind-css.svg',
+  'typescript-icon.svg',
+  'react.svg',
+  'javascript-js.svg',
+  'node-js.svg',
+  'figma.svg',
+  'file-type-css.svg',
+  'file-type-html.svg',
+  // ...
+]
+
+/**
+ * Tableau pour la deuxième ligne (défilement inversé)
+ */
+const logosLine2 = [
+  'linux.svg',
+  'photoshop.svg',
+  'php.svg',
+  'python.svg',
+  'sql.svg',
+  'wordpress.svg',
+  'laravel.svg',
+  'gitt.svg',
+  'github.svg',
   // ...
 ]
 
@@ -26,7 +43,7 @@ const LogoCarousel: React.FC = () => {
   useEffect(() => {
     // Fonction déclenchée lorsque la page est totalement chargée
     const handlePageLoad = () => {
-      // On attend 3 secondes avant d'activer l'affichage
+      // On attend 3 secondes avant d'activer l'affichage (ici seulement 10ms pour la démo)
       setTimeout(() => {
         setShowMarquee(true)
       }, 10)
@@ -49,29 +66,30 @@ const LogoCarousel: React.FC = () => {
   return (
     <CarouselContainer>
       <Wrapper>
-        {/**
-         * On n'affiche le carrousel que si showMarquee est true
-         */}
         {showMarquee && (
           <>
+            {/*
+              Première ligne : utilise logosLine1 (défilement normal)
+            */}
             <Marquee>
               <MarqueeGroup
                 isPaused={pausedGroup1}
                 onMouseEnter={() => setPausedGroup1(true)}
                 onMouseLeave={() => setPausedGroup1(false)}
               >
-                {logos.map((logo, index) => (
+                {logosLine1.map((logo, index) => (
                   <ImageGroup key={index}>
                     <Image src={logo} alt={`Logo ${index + 1}`} />
                   </ImageGroup>
                 ))}
               </MarqueeGroup>
+
               <MarqueeGroup
                 isPaused={pausedGroup1}
                 onMouseEnter={() => setPausedGroup1(true)}
                 onMouseLeave={() => setPausedGroup1(false)}
               >
-                {logos.map((logo, index) => (
+                {logosLine1.map((logo, index) => (
                   <ImageGroup key={`duplicate-${index}`}>
                     <Image src={logo} alt={`Logo ${index + 1} (Duplicate)`} />
                   </ImageGroup>
@@ -79,24 +97,28 @@ const LogoCarousel: React.FC = () => {
               </MarqueeGroup>
             </Marquee>
 
+            {/*
+              Deuxième ligne : utilise logosLine2 (défilement inversé)
+            */}
             <Marquee>
               <MarqueeGroup2
                 isPaused={pausedGroup2}
                 onMouseEnter={() => setPausedGroup2(true)}
                 onMouseLeave={() => setPausedGroup2(false)}
               >
-                {logos.map((logo, index) => (
+                {logosLine2.map((logo, index) => (
                   <ImageGroup key={index}>
                     <Image src={logo} alt={`Logo ${index + 1}`} />
                   </ImageGroup>
                 ))}
               </MarqueeGroup2>
+
               <MarqueeGroup2
                 isPaused={pausedGroup2}
                 onMouseEnter={() => setPausedGroup2(true)}
                 onMouseLeave={() => setPausedGroup2(false)}
               >
-                {logos.map((logo, index) => (
+                {logosLine2.map((logo, index) => (
                   <ImageGroup key={`duplicate-${index}`}>
                     <Image src={logo} alt={`Logo ${index + 1} (Duplicate)`} />
                   </ImageGroup>
@@ -120,8 +142,7 @@ const CarouselContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -150px !important;
-  width: 200%;
+  width: 415%;
   height: 100%;
   overflow: hidden;
   margin: 0 auto;
@@ -195,12 +216,12 @@ const MarqueeGroup2 = styled.div.withConfig({
 
 const ImageGroup = styled.div`
   display: grid;
-  width: clamp(2rem, 3rem + 1vmin, 1rem);
+  width: clamp(2rem, 3rem + 1vmin, 4rem);
 `
 
 const Image = styled.img`
   object-fit: contain;
-  width: 100%;
+  width: 70%;
   height: 100%;
   border-radius: 0.5rem;
 `

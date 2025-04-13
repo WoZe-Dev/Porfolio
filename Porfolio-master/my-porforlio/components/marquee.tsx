@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import { div, main } from 'framer-motion/client';
 import { AuroraBackground } from "./ui/aurora-background";
 import { AuroraBackgroundmarque } from "./ui/aurora-background-marque";
+import { CardStackDemo } from '../components/card-stack'
 
 const Marquee: React.FC = () => {
   return (
@@ -162,6 +163,11 @@ const Marquee: React.FC = () => {
               
             
           </p>
+
+          <div className='mobile'>
+                  <CardStackDemo/>
+          
+                  </div>
           
 
           <div className="relativee phone">
