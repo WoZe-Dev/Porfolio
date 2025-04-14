@@ -181,6 +181,11 @@ font-size: 0.775rem;
   .md\:grid-cols-6 {
     grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
   }
+
+  .md\:w-96 {
+    margin-top: 1rem;
+}
+
 }
 
 .text-7xl {
@@ -285,7 +290,7 @@ font-size: 0.775rem;
 
 
 
-@media (min-width: 1900px){
+@media (min-width: 700px){
 
   .mobile{
     display: none;
@@ -293,6 +298,27 @@ font-size: 0.775rem;
   
 
 }
+
+@media (min-width: 1000px){
+
+  .h-\[100vh\] {
+    height: 155vh !important;
+}
+  
+
+}
+
+
+@media (min-width: 1800px){
+
+  .h-\[100vh\] {
+    height: 117vh !important;
+}
+  
+
+}
+
+
 
 @media (max-width: 430px) {
   .phone {
