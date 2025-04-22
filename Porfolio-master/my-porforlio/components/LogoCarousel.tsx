@@ -40,6 +40,9 @@ const LogoCarousel: React.FC = () => {
   // Contrôle l'affichage effectif du carrousel
   const [showMarquee, setShowMarquee] = useState(false)
 
+  // State pour le thème
+  const [isDarkTheme, setIsDarkTheme] = useState(false)
+
   useEffect(() => {
     // Fonction déclenchée lorsque la page est totalement chargée
     const handlePageLoad = () => {
@@ -63,6 +66,22 @@ const LogoCarousel: React.FC = () => {
     }
   }, [])
 
+  // Add a useEffect to detect system theme or parent theme changes
+  useEffect(() => {
+    // Check if user prefers dark mode
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setIsDarkTheme(prefersDark);
+    
+    // Listen for changes in system preference
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkTheme(e.matches);
+    };
+    
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   return (
     <CarouselContainer>
       <Wrapper>
@@ -79,7 +98,11 @@ const LogoCarousel: React.FC = () => {
               >
                 {logosLine1.map((logo, index) => (
                   <ImageGroup key={index}>
-                    <Image src={logo} alt={`Logo ${index + 1}`} />
+                    <Image 
+                      src={logo} 
+                      alt={`Logo ${index + 1}`}
+                      isDarkTheme={isDarkTheme} // Pass theme state from parent
+                    />
                   </ImageGroup>
                 ))}
               </MarqueeGroup>
@@ -91,7 +114,11 @@ const LogoCarousel: React.FC = () => {
               >
                 {logosLine1.map((logo, index) => (
                   <ImageGroup key={`duplicate-${index}`}>
-                    <Image src={logo} alt={`Logo ${index + 1} (Duplicate)`} />
+                    <Image 
+                      src={logo} 
+                      alt={`Logo ${index + 1} (Duplicate)`}
+                      isDarkTheme={isDarkTheme} // Pass theme state from parent
+                    />
                   </ImageGroup>
                 ))}
               </MarqueeGroup>
@@ -108,7 +135,11 @@ const LogoCarousel: React.FC = () => {
               >
                 {logosLine2.map((logo, index) => (
                   <ImageGroup key={index}>
-                    <Image src={logo} alt={`Logo ${index + 1}`} />
+                    <Image 
+                      src={logo} 
+                      alt={`Logo ${index + 1}`}
+                      isDarkTheme={isDarkTheme} // Pass theme state from parent
+                    />
                   </ImageGroup>
                 ))}
               </MarqueeGroup2>
@@ -120,7 +151,11 @@ const LogoCarousel: React.FC = () => {
               >
                 {logosLine2.map((logo, index) => (
                   <ImageGroup key={`duplicate-${index}`}>
-                    <Image src={logo} alt={`Logo ${index + 1} (Duplicate)`} />
+                    <Image 
+                      src={logo} 
+                      alt={`Logo ${index + 1} (Duplicate)`}
+                      isDarkTheme={isDarkTheme} // Pass theme state from parent
+                    />
                   </ImageGroup>
                 ))}
               </MarqueeGroup2>
@@ -219,9 +254,25 @@ const ImageGroup = styled.div`
   width: clamp(2rem, 3rem + 1vmin, 4rem);
 `
 
-const Image = styled.img`
+const Image = styled.img<{ isDarkTheme?: boolean }>`
   object-fit: contain;
   width: 70%;
   height: 100%;
   border-radius: 0.5rem;
+  
+  /* Only invert Next.js logo when in dark theme */
+  ${props => props.isDarkTheme && `
+    &[src*="next-js"] {
+      filter: invert(1);
+    }
+  `}
 `
+
+// --------- WORKBENCH COLOR CUSTOMIZATIONS ---------
+
+const workbenchColorCustomizations = {
+  "workbench.colorCustomizations": {
+    "editor.background": "#000000",
+    "editor.foreground": "#FFFFFF"
+  }
+}
