@@ -247,8 +247,17 @@ font-size: 0.775rem;
   margin-left: 3.5rem !important;
 }
 
+.h-\[13rem\] {
+  height: 16rem;
+}
+
 .md\:grid-cols-6{
   left: 3% !important;
+}
+
+.md\:h-60 {
+  height: 14.3rem !important;
+  margin-left: 1rem;
 }
 
 .w-96 {
@@ -299,6 +308,11 @@ font-size: 0.775rem;
 
 }
 
+
+
+  
+
+
 @media (min-width: 1000px){
 
   .h-\[100vh\] {
@@ -327,6 +341,15 @@ font-size: 0.775rem;
     right: 1%;
     margin-left: 2rem;
   }
+
+  .md\:h-60 {
+    height: 14.3rem !important;
+}
+
+
+.h-\[13rem\] {
+  height: 17rem;
+}
 
   .text-4xl {
     font-size: 1.5rem;
@@ -585,7 +608,7 @@ font-size: 0.775rem;
     font-size: 83%;
   }
   .md\:w-96 {
-    width: 24rem !important;
+    width: 21rem !important;
     margin-left: 1rem;
 }
 
