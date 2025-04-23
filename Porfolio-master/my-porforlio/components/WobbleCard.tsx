@@ -23,7 +23,7 @@ const WobbleCard: React.FC = () => {
               decoding="async"
               data-nimg="1"
               className="absolute inset-1 h-full w-full rounded-lg object-cover object-center brightness-[0.7]"
-              src="home-github.png"
+              src="home.png"
               style={{ color: "transparent" }}
             />
             <span aria-hidden="true" className="absolute inset-1 bg-gradient-to-t  to-neutral-900/20 dark:bg-neutral-900/50"></span>

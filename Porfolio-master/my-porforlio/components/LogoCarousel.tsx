@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes, css, createGlobalStyle } from 'styled-components'
 
 /**
  * Tableau pour la première ligne (défilement normal)
@@ -32,6 +32,25 @@ const logosLine2 = [
   'github.svg',
   // ...
 ]
+
+
+const GlobalStyles = createGlobalStyle`
+  .dark img[src*="next-js"] {
+    filter: invert(1) brightness(1.8);
+    transition: filter .3s ease;
+  }
+
+  .dark img[src*="wordpress"] {
+    filter: invert(1) brightness(1.8);
+    transition: filter .3s ease;
+  }
+
+  .dark img[src*="github"] {
+    filter: invert(1) brightness(1.8);
+    transition: filter .3s ease;
+  }
+    
+`;
 
 const LogoCarousel: React.FC = () => {
   const [pausedGroup1, setPausedGroup1] = useState(false)
@@ -84,6 +103,7 @@ const LogoCarousel: React.FC = () => {
 
   return (
     <CarouselContainer>
+      <GlobalStyles />
       <Wrapper>
         {showMarquee && (
           <>
