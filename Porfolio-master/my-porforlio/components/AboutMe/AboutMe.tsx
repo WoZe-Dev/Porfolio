@@ -10,12 +10,12 @@ const AboutMe: React.FC = () => {
 
   return (
     
-    <main className='bg-white dark:bg-black absolute inset-0 overflow-hidden"'>
+    <main className='bg-white dark:bg-black overflow-hidden"'>
     <div className="grid  about-full grid-cols-1 md:grid-cols-2 gap-8 items-center">
       {/* Section Texte */}
       <div>
-        <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-gray-100">À propos de moi</h1>
-        <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        <h1 className="mb-4 text-4xll font-bold text-gray-900 dark:text-gray-100">À propos de moi</h1>
+        <div className="space-y-4 text-lg text-lgg  leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
             Je m'appelle <strong>Votre Nom</strong>, et je suis un développeur passionné basé à Votre Ville.
           </p>

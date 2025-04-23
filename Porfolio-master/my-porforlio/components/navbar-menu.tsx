@@ -45,10 +45,8 @@ function Navbar({ className }: { className?: string }) {
 
   const menuItems = [
     { name: "Home", href: "/", icon: Home },
-    { name: "School", href: "/school", icon: BookOpen },
     { name: "Projects", href: "/projects", icon: FolderGit2 },
     { name: "Blog", href: "/blog", icon: ScrollText },
-    { name: "About", href: "/about", icon: Users },
     { name: "Experience", href: "/experience", icon: Briefcase },
   ];
 

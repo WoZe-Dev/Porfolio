@@ -13,7 +13,9 @@
 font-size: 0.775rem;
 }
 
-
+.max-centrer{
+  max-width: 57rem;
+}
 
 
 .bottom-13{
@@ -23,6 +25,23 @@ font-size: 0.775rem;
 .rounded-full{
   border-radius: 9999px !important;
 }
+
+
+@media (max-width: 414px){
+
+  .text-lgg{
+    padding: 0.7rem;
+  }
+
+  .text-4xll {
+    font-size: 1.5rem;
+    margin-left : 1rem;
+  }
+  
+
+}
+
+
 
 .animate-spin{
   animation: spin 21s linear infinite;
