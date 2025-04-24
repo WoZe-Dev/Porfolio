@@ -141,8 +141,12 @@
   top: -21rem;
 }
 
-.gap-4{
+.gap-44{
   gap: 0rem;
+}
+
+.gap-44{
+  gap: 1rem;
 }
 
 .h-screen{

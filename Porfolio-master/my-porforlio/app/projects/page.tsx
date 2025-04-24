@@ -22,7 +22,7 @@ function App() {
               <img 
                 alt="E-commerce Platform" 
                 className="h-full w-full object-cover object-top"
-                src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80"
+                src="recherche-img.PNG"
               />
             </div>
             <div className="flex flex-1 flex-col p-5">

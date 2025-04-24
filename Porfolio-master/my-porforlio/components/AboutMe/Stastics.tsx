@@ -25,27 +25,27 @@ const Statistics: React.FC = () => {
 
   const data = [
     { label: 'My Age', value: preciseAge }, // Mise à jour dynamique de l'âge
-    { label: 'Github Stars', value: '414', icon: 'git.svg' },
-    { label: 'Github Followers', value: '+237', link: 'https://github.com/mateusfg7?tab=followers' , icon: 'git.svg'},
-    { label: 'Blog posts', value: '45' , icon: 'blog.svg' },
-    { label: 'Spotify Plays', value: '4681' , icon: 'music.svg' },
+    { label: 'Github Stars', value: '1', icon: 'git.svg' },
+    { label: 'Github Followers', value: '+3', link: 'https://github.com/mateusfg7?tab=followers' , icon: 'git.svg'},
+    { label: 'Projet Git ', value: '13' , icon: 'git.svg' },
+    { label: 'Spotify Plays', value: '300' , icon: 'spotify.svg' },
     {
       label: 'Top Artist',
-      value: 'Charlie Brown Jr.',
-      link: 'https://www.last.fm/music/Charlie+Brown+Jr.',
-      icon: 'music.svg'
+      value: 'NF CLOUDS ',
+      link: 'https://www.last.fm/music/NF/CLOUDS+(THE+MIXTAPE)',
+      icon: 'spotify.svg'
     },
   ];
 
   return (
     <div className="dark:text-white space-y-4 dark:bg-black">
-      <div className="grid about-full  grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid about-full   grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
         {data.map((item, index) => (
           <div
             key={index}
             className="flex flex-col items-center justify-center gap-3 rounded-3xl bg-neutral-200 p-5 leading-none dark:bg-neutral-950 md:p-7 lg:items-start lg:gap-2"
           >
-            <span className="inline-flex items-center gap-2 text-neutral-600">
+            <span className="inline-flex dark:text-white items-center gap-2 text-neutral-600">
               {item.label}
               {item.icon && (
                 <img src={item.icon} alt={`${item.label} icon`} className="w-4 h-4" />
