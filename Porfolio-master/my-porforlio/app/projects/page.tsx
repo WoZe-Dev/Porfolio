@@ -29,27 +29,29 @@ function App() {
               <div>
                 <div className="mb-10 flex flex-col items-center gap-2 md:mb-4 md:flex-row">
                   <h2 className=" dark:text-white text-center text-lg font-bold md:text-left">
-                    E-commerce Platform
+                  Recherche d'images
                   </h2>
                 </div>
                 <p className="text-justify text-sm md:text-left">
-                  A full-featured e-commerce platform with React and Node.js, featuring real-time inventory management and secure payment processing.
+                Développement d'un outil d'analyse d'image basé sur l'intelligence artificielle, permettant d'associer une photo à une référence produit. 
+                <br />
+                Extraction de caractéristiques visuelles, et mise en place d'un cache pour accélérer les recherches.
                 </p>
                 <div className="mt-4 hidden flex-wrap items-center gap-2 md:flex">
                   <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    React
+                    Python
                   </span>
                   <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    Node.js
+                    HTLM/CSS
                   </span>
                   <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    MongoDB
+                  Javascript  
                   </span>
                 </div>
               </div>
               <div className="mt-9 flex flex-1 items-end justify-center gap-2">
                 <a 
-                  href="#" 
+                  href="https://github.com/WoZe-Dev/tricycle-research" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="flex items-center gap-2 rounded-2xl bg-[rgba(24,23,23,0.1)] p-2 text-[rgb(24,23,23)] hover:bg-[rgb(24,23,23)] hover:text-[rgb(246,248,250)] dark:bg-[rgb(246,248,250,0.1)] dark:text-[rgb(246,248,250)] dark:hover:bg-[rgb(246,248,250)] hover:dark:text-[rgb(24,23,23)]"
@@ -58,7 +60,7 @@ function App() {
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="tricycle-office-img" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="flex items-center gap-2 rounded-2xl bg-blue-700/10 p-2 text-blue-700 hover:bg-blue-700 hover:text-neutral-50 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
@@ -78,34 +80,37 @@ function App() {
               <img 
                 alt="AI Chat Application" 
                 className="h-full w-full object-cover object-top"
-                src="https://images.unsplash.com/photo-1676299081847-824916de030a?auto=format&fit=crop&q=80"
+                src="betweenus.PNG"
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
               <div>
                 <div className="mb-10 flex flex-col items-center gap-2 md:mb-4 md:flex-row">
                   <h2 className="dark:text-white text-center text-lg font-bold md:text-left">
-                    AI Chat Application
+                    BetweenUs
                   </h2>
                 </div>
                 <p className="dark:text-white text-justify text-sm md:text-left">
-                  An intelligent chat application powered by AI, featuring real-time translation and sentiment analysis.
+                  Projet de groupe à l'ESGi, une application web de galerie photo avec système d'authentification permettant aux utilisateurs de télécharger et gérer leurs photos.
                 </p>
                 <div className="mt-4 hidden flex-wrap items-center gap-2 md:flex">
                   <span className=" dark:text-white rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    Next.js
+                    Framework / PHP
                   </span>
                   <span className=" dark:text-white rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    OpenAI
+                  SCSS
                   </span>
                   <span className=" dark:text-white rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    WebSocket
+                  Javascript
+                  </span>
+                  <span className=" dark:text-white rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
+                  Docker
                   </span>
                 </div>
               </div>
               <div className=" mt-9 flex flex-1 items-end justify-center gap-2">
                 <a 
-                  href="#" 
+                  href="https://github.com/mohedabbas/betweenus" 
                   target="_blank" 
                   rel="noreferrer" 
                   className=" dark:text-white flex items-center gap-2 rounded-2xl bg-[rgba(24,23,23,0.1)] p-2 text-[rgb(24,23,23)] hover:bg-[rgb(24,23,23)] hover:text-[rgb(246,248,250)] dark:bg-[rgb(246,248,250,0.1)] dark:text-[rgb(246,248,250)] dark:hover:bg-[rgb(246,248,250)] hover:dark:text-[rgb(24,23,23)]"
@@ -114,7 +119,7 @@ function App() {
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="betweenus" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="flex items-center gap-2 rounded-2xl bg-blue-700/10 p-2 text-blue-700 hover:bg-blue-700 hover:text-neutral-50 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
@@ -132,49 +137,35 @@ function App() {
               <img 
                 alt="Fitness Tracker" 
                 className="h-full w-full object-cover object-top"
-                src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80"
+                src="retouche-photo.png"
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
               <div>
                 <div className="mb-10 flex flex-col items-center gap-2 md:mb-4 md:flex-row">
                   <h2 className=" dark:text-white text-center text-lg font-bold md:text-left">
-                    Fitness Tracker
+                    Photoroom studio 
                   </h2>
                 </div>
                 <p className=" dark:text-white text-justify text-sm md:text-left">
-                  A comprehensive fitness tracking application with workout planning, progress monitoring, and social features.
+                 Détourage automatique d'images via l'API PhotoRoom,
+                 redimensionnement d'image avec ajout d'un logo personnalisé centré en bas.
                 </p>
                 <div className="mt-4 hidden flex-wrap items-center gap-2 md:flex">
                   <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    React Native
-                  </span>
-                  <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    Firebase
-                  </span>
-                  <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    GraphQL
+                    Python
                   </span>
                 </div>
               </div>
               <div className="mt-9 flex flex-1 items-end justify-center gap-2">
                 <a 
-                  href="#" 
+                  href="https://github.com/WoZe-Dev/Retouche-image.git" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="flex items-center gap-2 rounded-2xl bg-[rgba(24,23,23,0.1)] p-2 text-[rgb(24,23,23)] hover:bg-[rgb(24,23,23)] hover:text-[rgb(246,248,250)] dark:bg-[rgb(246,248,250,0.1)] dark:text-[rgb(246,248,250)] dark:hover:bg-[rgb(246,248,250)] hover:dark:text-[rgb(24,23,23)]"
                 >
                   Source
                   <Github className="h-5 w-5" />
-                </a>
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="flex items-center gap-2 rounded-2xl bg-blue-700/10 p-2 text-blue-700 hover:bg-blue-700 hover:text-neutral-50 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
-                >
-                  Website
-                  <Globe className="h-5 w-5" />
                 </a>
               </div>
             </div>
