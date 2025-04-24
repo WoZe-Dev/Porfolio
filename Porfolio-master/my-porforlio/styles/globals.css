@@ -361,9 +361,17 @@ font-size: 0.775rem;
     margin-left: 2rem;
   }
 
+  .vertical{
+    padding: 1rem;
+  }
+
   .md\:h-60 {
     height: 14.3rem !important;
 }
+
+ .responsive-about{
+  padding: 1rem;
+ }
 
 
 .h-\[13rem\] {
