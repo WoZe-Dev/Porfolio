@@ -25,14 +25,14 @@ function App() {
                 src="recherche-img.PNG"
               />
             </div>
-            <div className="flex flex-1 flex-col p-5">
+            <div className=" bg-white dark:bg-black flex flex-1 flex-col p-5">
               <div>
                 <div className="mb-10 flex flex-col items-center gap-2 md:mb-4 md:flex-row">
-                  <h2 className=" dark:text-white text-center text-lg font-bold md:text-left">
+                  <h2 className=" bg-white dark:bg-black   dark:text-white text-center text-lg font-bold md:text-left">
                   Recherche d'images
                   </h2>
                 </div>
-                <p className="text-justify text-sm md:text-left">
+                <p className=" dark:text-white  text-justify text-sm md:text-left">
                 Développement d'un outil d'analyse d'image basé sur l'intelligence artificielle, permettant d'associer une photo à une référence produit. 
                 <br />
                 Extraction de caractéristiques visuelles, et mise en place d'un cache pour accélérer les recherches.
@@ -177,28 +177,33 @@ function App() {
               <img 
                 alt="Smart Home Dashboard" 
                 className="h-full w-full object-cover object-top"
-                src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80"
+                src="Kanboard.png"
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
               <div>
                 <div className="mb-10 flex flex-col items-center gap-2 md:mb-4 md:flex-row">
                   <h2 className=" dark:text-white text-center text-lg font-bold md:text-left">
-                    Smart Home Dashboard
+                   Kanboard ( en cours de développement )
                   </h2>
                 </div>
                 <p className="dark:text-white text-justify text-sm md:text-left">
-                  A modern dashboard for controlling smart home devices with real-time monitoring and automation features.
+                  Projet annuel est un projet qui chaque année réuni l'ensemble des compétences acquises
+                  autour d'un projet afin de donner aux étudiants l'opportunité de créer un projet complet et
+                  professionnalisant
                 </p>
                 <div className="mt-4 hidden flex-wrap items-center gap-2 md:flex">
                   <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    Vue.js
+                    Laravel 
                   </span>
                   <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    MQTT
+                  SQL
                   </span>
                   <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
-                    IoT
+                  JavaScript
+                  </span>
+                  <span className="rounded-xl bg-neutral-700/10 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-200/10 dark:text-neutral-200">
+                  HTML/CSS
                   </span>
                 </div>
               </div>
@@ -218,28 +223,14 @@ function App() {
                   rel="noreferrer" 
                   className="flex items-center gap-2 rounded-2xl bg-blue-700/10 p-2 text-blue-700 hover:bg-blue-700 hover:text-neutral-50 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
                 >
-                  Website
+                  Website ( bientôt )
                   <Globe className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Small Projects Grid */}
-      
-
-        {/* More Projects Link */}
-        <div className="mt-8 bg-white dark:bg-black flex justify-center md:justify-end">
-          <a 
-            href="#" 
-            target="_blank" 
-            className="flex items-end bg-white dark:bg-black gap-px leading-none opacity-70 transition-opacity hover:opacity-100"
-          >
-            <span>more projects</span>
-            <span className="text-lg">→</span>
-          </a>
-        </div>
+    
         
       </div>
       <Footer/>

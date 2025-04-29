@@ -38,7 +38,7 @@ const Statistics: React.FC = () => {
   ];
 
   return (
-    <div className="dark:text-white space-y-4 dark:bg-black">
+    <div className="dark:text-white dark:text-white space-y-4 dark:bg-black">
       <div className="grid about-full   grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
         {data.map((item, index) => (
           <div
@@ -48,7 +48,7 @@ const Statistics: React.FC = () => {
             <span className="inline-flex dark:text-white items-center gap-2 text-neutral-600">
               {item.label}
               {item.icon && (
-                <img src={item.icon} alt={`${item.label} icon`} className="w-4 h-4" />
+                <img src={item.icon} alt={`${item.label} icon`} className="w-4 h-4 " />
               )}
             </span>
             <div className="flex w-full justify-center text-xl lg:justify-start">
