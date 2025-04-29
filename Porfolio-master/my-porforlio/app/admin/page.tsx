@@ -21,7 +21,7 @@ export default async function AdminPage() {
 
   return (
     <main className="min-h-screen bg-gray-100 p-8">
-      <header className="flex items-center justify-between mb-8">
+      <header className="flex items-center justify-between-admin mb-8">
         <h1 className="text-3xl font-bold text-gray-800">Tableau de Bord</h1>
         <div className="flex items-center space-x-4">
           <Link href="/" className="text-gray-600 hover:text-gray-800">Retour au site</Link>
@@ -36,7 +36,7 @@ export default async function AdminPage() {
         {posts.length === 0 ? (
           <p className="text-gray-600">Aucun article trouvé.</p>
         ) : (
-          <table className="w-full text-left border-collapse">
+          <table className="w-full-admin text-left border-collapse">
             <thead>
               <tr className="bg-gray-50">
                 <th className="py-3 px-4 font-medium text-gray-700 border-b">Titre</th>

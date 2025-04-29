@@ -5,6 +5,23 @@
   width: 100%;
 }
 
+
+.justify-between-admin{
+  max-width: none;
+  justify-content: space-between;
+}
+
+
+.w-full-admin{
+  max-width: none;
+  width: 100%;
+}
+
+
+.max-w-lg-admin{
+  max-width: none;
+  width: 100%;
+}
 .centrer {
   align-items: center;
 }

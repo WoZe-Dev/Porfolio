@@ -61,7 +61,7 @@ export default function EditPostForm({
   }
 
   return (
-    <main className="p-8 max-w-lg">
+    <main className="p-8 max-w-lg-admin">
       <h1 className="text-2xl font-bold mb-4">Édition de l’article</h1>
       <form onSubmit={handleUpdate} className="space-y-4">
         <input
