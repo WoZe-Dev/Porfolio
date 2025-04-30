@@ -63,7 +63,7 @@ function App() {
                   href="tricycle-office-img" 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="flex items-center gap-2 rounded-2xl bg-blue-700/10 p-2 text-blue-700 hover:bg-blue-700 hover:text-neutral-50 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
+                  className="flex items-center gap-2 rounded-2xl p-2 text-neutral-700 hover:bg-neutral-900 hover:text-neutral-50 dark:bg-neutral-600/5 dark:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-900"
                 >
                   Website
                   <Globe className="h-5 w-5" />
@@ -122,7 +122,7 @@ function App() {
                   href="betweenus" 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="flex items-center gap-2 rounded-2xl bg-blue-700/10 p-2 text-blue-700 hover:bg-blue-700 hover:text-neutral-50 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
+                  className="flex items-center gap-2 rounded-2xl p-2 text-neutral-700 hover:bg-neutral-900 hover:text-neutral-50 dark:bg-neutral-600/5 dark:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-900"
                 >
                   Website
                   <Globe className="h-5 w-5" />
@@ -221,7 +221,7 @@ function App() {
                   href="#" 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="flex items-center gap-2 rounded-2xl bg-blue-700/10 p-2 text-blue-700 hover:bg-blue-700 hover:text-neutral-50 dark:bg-blue-600/5 dark:text-blue-600 dark:hover:bg-blue-600 dark:hover:text-neutral-50"
+                  className="flex items-center gap-2 rounded-2xl p-2 text-neutral-700 hover:bg-neutral-900 hover:text-neutral-50 dark:bg-neutral-600/5 dark:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-900"
                 >
                   Website ( bientôt )
                   <Globe className="h-5 w-5" />

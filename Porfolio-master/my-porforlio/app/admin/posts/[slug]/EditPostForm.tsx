@@ -3,11 +3,35 @@
 import { useState } from "react";
 import MarkdownIt from "markdown-it";
 import MdEditor from "react-markdown-editor-lite";
+import hljs from "highlight.js"; // Import de highlight.js
 import DatePicker from "react-datepicker";
 import "react-markdown-editor-lite/lib/index.css";
 import "react-datepicker/dist/react-datepicker.css";
+import "highlight.js/styles/github.css"; // Thème pour le surlignage syntaxique
 
-const mdParser = new MarkdownIt();
+const mdParser = new MarkdownIt({
+  highlight: function (str: string, lang: string): string {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        const highlightedCode = hljs.highlight(str, { language: lang }).value;
+        return `
+          <div style="position: relative;">
+            <button 
+              onclick="navigator.clipboard.writeText(\`${str.replace(/`/g, "\\`")}\`)" 
+              style="position: absolute; top: 5px; right: 5px; background: #007bff; color: white; border: none; padding: 5px; cursor: pointer; border-radius: 3px;"
+            >
+              Copier
+            </button>
+            <pre class="hljs"><code>${highlightedCode}</code></pre>
+          </div>
+        `;
+      } catch (__) {
+        return "";
+      }
+    }
+    return `<pre class="hljs"><code>${mdParser.utils.escapeHtml(str)}</code></pre>`;
+  },
+});
 
 export default function EditPostForm({
   slug,
