@@ -7,6 +7,14 @@ published: true
 ---
 
 
+
+
+```javascript
+console.log("Hello, world!");
+```
+
+
+
 # 💻 Blog – Fiches pratiques Web
 
 🔹 CSS 
@@ -14,10 +22,24 @@ published: true
 🔸 Faire défiler un composant avec hauteur fixe
 
 
+```lang
+ton code ici
+dd
+dd
+d
+d
+d
+d
 ```
-.component {
+
+
+
+`.component {
   height: 100vh;
   overflow-y: scroll;
-}
-```
+}`
+
+[code]ton cggggode ici[/code]
+
+
 
