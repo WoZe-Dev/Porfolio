@@ -1,37 +1,48 @@
+// EditPostForm.tsx
 "use client";
 
 import { useState } from "react";
 import MarkdownIt from "markdown-it";
 import MdEditor from "react-markdown-editor-lite";
-import hljs from "highlight.js"; // Import de highlight.js
+import hljs from "highlight.js";
 import DatePicker from "react-datepicker";
 import "react-markdown-editor-lite/lib/index.css";
 import "react-datepicker/dist/react-datepicker.css";
-import "highlight.js/styles/github.css"; // Thème pour le surlignage syntaxique
+import "highlight.js/styles/github.css";
 
+// ---------- Markdown + Highlight.js ----------
 const mdParser = new MarkdownIt({
-  highlight: function (str: string, lang: string): string {
+  highlight: (str: string, lang: string): string => {
     if (lang && hljs.getLanguage(lang)) {
       try {
         const highlightedCode = hljs.highlight(str, { language: lang }).value;
         return `
           <div style="position: relative;">
-            <button 
-              onclick="navigator.clipboard.writeText(\`${str.replace(/`/g, "\\`")}\`)" 
-              style="position: absolute; top: 5px; right: 5px; background: #007bff; color: white; border: none; padding: 5px; cursor: pointer; border-radius: 3px;"
-            >
+            <button
+              onclick="navigator.clipboard.writeText(\`${str.replace(/`/g, "\\`")}\`)"
+              style="position: absolute; top: 5px; right: 5px;
+                     background: #007bff; color: #fff;
+                     border: none; padding: 5px 8px;
+                     cursor: pointer; border-radius: 4px;">
               Copier
             </button>
             <pre class="hljs"><code>${highlightedCode}</code></pre>
           </div>
         `;
-      } catch (__) {
+      } catch {
         return "";
       }
     }
     return `<pre class="hljs"><code>${mdParser.utils.escapeHtml(str)}</code></pre>`;
   },
 });
+
+// ---------- Helper ----------
+const cleanTags = (raw: string): string[] =>
+  raw
+    .split(",")
+    .map((t: string) => t.trim())  // <-- t est typé
+    .filter(Boolean);
 
 export default function EditPostForm({
   slug,
@@ -40,20 +51,22 @@ export default function EditPostForm({
   slug: string;
   initialData: any;
 }) {
-  const [title, setTitle] = useState(initialData.title || "");
-  const [subtitle, setSubtitle] = useState(initialData.subtitle || "");
+  // ---------- States ----------
+  const [title, setTitle]             = useState(initialData.title || "");
+  const [subtitle, setSubtitle]       = useState(initialData.subtitle || "");
   const [description, setDescription] = useState(initialData.description || "");
-  const [tags, setTags] = useState(
+  const [tags, setTags]               = useState(
     Array.isArray(initialData.tags)
       ? initialData.tags.join(", ")
       : initialData.tags || ""
   );
-  const [category, setCategory] = useState(initialData.category || "");
-  const [published, setPublished] = useState(!!initialData.published);
+  const [category, setCategory]       = useState(initialData.category || "");
+  const [published, setPublished]     = useState<boolean>(!!initialData.published);
   const [publishDate, setPublishDate] = useState<Date | null>(
     initialData.publishDate ? new Date(initialData.publishDate) : null
   );
 
+  // ---------- Handlers ----------
   async function handleUpdate(e: React.FormEvent) {
     e.preventDefault();
     const res = await fetch(`/api/admin/posts/${slug}`, {
@@ -63,30 +76,26 @@ export default function EditPostForm({
         title,
         subtitle,
         description,
-        tags: tags.split(",").map((t: string) => t.trim()).filter(Boolean),
+        tags: cleanTags(tags),   // utilise la fonction typée
         category,
         published,
         publishDate: publishDate?.toISOString(),
       }),
     });
-    if (res.ok) {
-      window.location.href = "/admin";
-    }
+    if (res.ok) window.location.href = "/admin";
   }
 
   async function handleDelete() {
     if (!confirm("Êtes-vous sûr de vouloir supprimer cet article ?")) return;
-    const res = await fetch(`/api/admin/posts/${slug}`, {
-      method: "DELETE",
-    });
-    if (res.ok) {
-      window.location.href = "/admin";
-    }
+    const res = await fetch(`/api/admin/posts/${slug}`, { method: "DELETE" });
+    if (res.ok) window.location.href = "/admin";
   }
 
+  // ---------- JSX ----------
   return (
     <main className="p-8 max-w-lg-admin">
       <h1 className="text-2xl font-bold mb-4">Édition de l’article</h1>
+
       <form onSubmit={handleUpdate} className="space-y-4">
         <input
           type="text"
@@ -96,6 +105,7 @@ export default function EditPostForm({
           onChange={(e) => setTitle(e.target.value)}
           required
         />
+
         <input
           type="text"
           placeholder="Sous-titre"
@@ -119,6 +129,7 @@ export default function EditPostForm({
           value={tags}
           onChange={(e) => setTags(e.target.value)}
         />
+
         <input
           type="text"
           placeholder="Catégorie"
@@ -131,7 +142,7 @@ export default function EditPostForm({
           <label>Date de publication</label>
           <DatePicker
             selected={publishDate}
-            onChange={(date: Date | null) => setPublishDate(date)}
+            onChange={(date) => setPublishDate(date)}
             dateFormat="dd/MM/yyyy"
             className="border w-full p-2"
           />
@@ -145,6 +156,7 @@ export default function EditPostForm({
           />
           <span>Publié</span>
         </label>
+
         <div className="flex space-x-4">
           <button className="bg-green-600 text-white px-4 py-2 rounded">
             Mettre à jour

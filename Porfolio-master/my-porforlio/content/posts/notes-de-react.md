@@ -6,40 +6,14 @@ category: "cdddccdd"
 published: true
 ---
 
+Voici un petit exemple :
 
+```typescript
+interface User {
+  id: number;
+  name: string;
+}
 
-
-```javascript
-console.log("Hello, world!");
-```
-
-
-
-# 💻 Blog – Fiches pratiques Web
-
-🔹 CSS 
-
-🔸 Faire défiler un composant avec hauteur fixe
-
-
-```lang
-ton code ici
-dd
-dd
-d
-d
-d
-d
-```
-
-
-
-`.component {
-  height: 100vh;
-  overflow-y: scroll;
-}`
-
-[code]ton cggggode ici[/code]
-
-
+const bob: User = { id: 1, name: "Bob" };
+console.log(bob);
 
