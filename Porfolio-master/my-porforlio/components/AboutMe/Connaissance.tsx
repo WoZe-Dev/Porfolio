@@ -12,20 +12,25 @@ const Connaissance: React.FC = () => {
     { name: "Typescript", color: "#007acc", isLearning: false, isBad: false },
     { name: "Python", color: "#FFD43B", isLearning: false, isBad: false },
     { name: "Javascript", color: "#F0DB4F", isLearning: false, isBad: false },
-    { name: "Rust", color: "#DEA584", isLearning: false, isBad: false },
-    { name: "Bash Script", color: "#4FA847", isLearning: false, isBad: false },
-    { name: "Java", color: "#0074BD", isLearning: false, isBad: false },
     { name: "SQL", color: "#003B57", isLearning: false, isBad: false },
-    { name: "Elixir", color: "#8d67af", isLearning: false, isBad: true },
     { name: "PHP", color: "#484C89", isLearning: false, isBad: true },
-    { name: "C++", color: "#00599c", isLearning: false, isBad: true },
+    { name: "C#", color: "#00599c", isLearning: false, isBad: true },
   ];
 
+  const randomColor = () =>
+    "#" +
+    Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, "0");
+
   const webSkills = [
-    { name: "React", color: "#61DAFB", isLearning: false, isBad: false },
-    { name: "Next.js", color: "#000000", isLearning: false, isBad: false },
-    { name: "Node.js", color: "#68A063", isLearning: false, isBad: false },
-    { name: "TailwindCSS", color: "#38B2AC", isLearning: false, isBad: false },
+    { name: "React", color: randomColor(), isLearning: false, isBad: false },
+    { name: "Next.js", color: randomColor(), isLearning: false, isBad: false },
+    { name: "Node.js", color: randomColor(), isLearning: false, isBad: false },
+    { name: "TailwindCSS", color: randomColor(), isLearning: false, isBad: false },
+    { name: "HTML", color: randomColor(), isLearning: false, isBad: false },
+    { name: "CSS", color: randomColor(), isLearning: false, isBad: false },
+    { name: "JavaScript", color: randomColor(), isLearning: false, isBad: false },
   ];
 
   const renderSkills = (skills: typeof generalSkills) => (
@@ -126,7 +131,7 @@ const Connaissance: React.FC = () => {
         >
           <Accordion.Header>
             <Accordion.Trigger className="group flex w-full items-center justify-between py-7 text-lg leading-none outline-none transition-colors hover:text-gray-600 dark:hover:text-gray-300">
-              <span>Développement Web</span>
+              <span>Front-end</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"
