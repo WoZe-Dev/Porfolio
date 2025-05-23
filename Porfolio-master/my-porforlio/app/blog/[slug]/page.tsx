@@ -9,6 +9,8 @@ import rehypeStringify from 'rehype-stringify'
 import { NavbarDemo } from "@/components/navbar-menu"
 import { Clock, Calendar, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 // Types
 interface BlogPostMetadata {
@@ -107,15 +109,12 @@ function PostContent({ html }: { html: string }) {
   return (
     <main className="px-4 pb-24">
       <div className="max-w-4xl mx-auto">
-        <div className="font-bold text-gray-900 dark:text-gray-100"
-        >
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
-
+        <article
+          className="prose prose-zinc dark:prose-invert prose-headings:font-bold prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-p:text-base prose-a:text-indigo-600 dark:prose-a:text-indigo-300"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
         {/* Article Footer */}
-        <div className="mt-16 pt-8 border-t border-zinc-800">
-
-        </div>
+        <div className="mt-16 pt-8 border-t border-zinc-800"></div>
       </div>
     </main>
   )
@@ -163,9 +162,10 @@ async function getBlogPost(slug: string): Promise<{
 
   const result = await unified()
     .use(remarkParse)
-    .use(remarkRehype)
-    .use(rehypePrettyCode, )
-    .use(rehypeStringify)
+    .use(remarkGfm) // optionnel mais conseillé
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw) // <-- Ajoute ce plugin juste après remarkRehype
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(content)
 
   return {
