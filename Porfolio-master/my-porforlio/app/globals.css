@@ -16,13 +16,24 @@
 }
 
 
-.bg-neutral-200{
-      border-top: solid;
-      background-color: hsl(0deg 0% 100%);
+.justify-between{
+  max-width: 57rem
 }
-.rounded-lg{
-    border-radius: 0.0rem;
+
+.back-tags {
+  background-color: rgb(0 0 0);
+  color: white !important;
 }
+
+.bggg-neutral-200{
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+}
+
+
+.py-8 {
+  padding-top: 9rem;
+}
+
 
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]){
@@ -130,17 +141,19 @@
   top: -21rem;
 }
 
-.gap-4{
+.gap-44{
   gap: 0rem;
+}
+
+.gap-44{
+  gap: 1rem;
 }
 
 .h-screen{
   height: auto;
 }
 
-.grid-cols-3{
-  margin: auto;
-}
+
 
 
 
@@ -159,7 +172,6 @@ body {
 }
 
 .grid-cols-5{
-  width: 380%;
   position: relative;
   top: 14px;
   margin-left: 16rem;
@@ -168,7 +180,7 @@ body {
 }
 
 .md\:h-60{
-  height: 11rem !important;
+  height: 13.3rem !important;
 }
 
 
@@ -180,5 +192,4 @@ body {
     text-wrap: balance;
   }
 }
-
 

@@ -1,10 +1,10 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Head from 'next/head';
-import './globals.css';
-import '../styles/globals.css';
-import { ThemeProvider } from "@/context/ThemeContext";
+import Head from "next/head";
+import "./globals.css";
+import "../styles/globals.css";
+import { ThemeProvider } from "@/content/ThemeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,10 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link href="https://fonts.googleapis.com/css2?family=Playwrite+SK:wght@100..400&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playwrite+SK:wght@100..400&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body className={inter.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

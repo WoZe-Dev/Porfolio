@@ -2,19 +2,25 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { m } from 'framer-motion';
 
+import Statistics from '@/components/AboutMe/Stastics';
+import Connaissance from '@/components/AboutMe/Connaissance';
 const AboutMe: React.FC = () => {
+
   return (
-    <div className="grid  about-full grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    
+    <main className='bg-white dark:bg-black overflow-hidden"'>
+    <div className="grid  responsive-about about-full grid-cols-1 md:grid-cols-2 gap-8 items-center">
       {/* Section Texte */}
       <div>
-        <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-gray-100">À propos de moi</h1>
-        <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        <h1 className="mb-4 text-4xll font-bold text-gray-900 dark:text-gray-100">À propos de moi</h1>
+        <div className="space-y-4 text-lg text-lgg  leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
-            Je m'appelle <strong>Votre Nom</strong>, et je suis un développeur passionné basé à Votre Ville.
+            Je m'appelle <strong>Ilia Choumitzky</strong>, j'ai 24 ans et je vis à Paris, en France
           </p>
           <p>
-            Je suis spécialisé en <strong>développement full-stack</strong>, avec une expertise en{' '}
+            Autodidacte <strong>full-stack</strong>, avec une expertise en{' '}
             <a href="https://reactjs.org/" className="text-blue-600 hover:underline">
               React.js
             </a>
@@ -33,7 +39,7 @@ const AboutMe: React.FC = () => {
           </p>
         </div>
         {/* Boutons */}
-        <div className="mt-6 flex flex-wrap gap-4">
+        <div className=" dark:bg-black mt-6 flex flex-wrap gap-44">
           <a
             href="/CV.pdf"
             target="_blank"
@@ -42,7 +48,7 @@ const AboutMe: React.FC = () => {
             Télécharger mon CV
           </a>
           <a
-            href="https://github.com/votreusername"
+            href="https://github.com/WoZe-Dev"
             target="_blank"
             className="inline-flex items-center rounded-md border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
           >
@@ -54,17 +60,23 @@ const AboutMe: React.FC = () => {
       {/* Section Image */}
       <div className="flex justify-center">
         <div className="w-48 h-48 md:w-64 md:h-64">
-          <Image
+          <Image 
             src="Avatar.svg"
             alt="Votre Nom"
-            width={256}
-            height={256}
-            className="rounded-full object-cover"
+            width={1000}
+            height={1000}
+            className="bg-white"
           />
         </div>
       </div>
     </div>
+    
+    <Statistics></Statistics>
+    
+    <Connaissance></Connaissance>
+    </main>
   );
+  
 };
 
 export default AboutMe;
