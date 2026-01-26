@@ -141,6 +141,14 @@
   top: -21rem;
 }
 
+
+@media (min-width: 430px) {
+  .relativee{
+  position: relative;
+  top: 0rem;
+}
+}
+
 .gap-44{
   gap: 0rem;
 }

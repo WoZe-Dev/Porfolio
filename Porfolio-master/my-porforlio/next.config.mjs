@@ -3,8 +3,9 @@ const nextConfig = {
     reactStrictMode: true,
     // Optimisations de performance
     swcMinify: true,
-    compiler: {
-      removeConsole: process.env.NODE_ENV === 'production',
+    // Optimisation compilation en dev
+    experimental: {
+      optimizePackageImports: ['lucide-react', 'framer-motion', '@tabler/icons-react'],
     },
     // Configuration WebSocket pour HMR
     assetPrefix: process.env.NODE_ENV === 'production' ? '' : undefined,

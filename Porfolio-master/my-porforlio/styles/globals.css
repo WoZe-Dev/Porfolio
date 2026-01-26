@@ -124,6 +124,11 @@ font-size: 0.775rem;
 
 }
 
+.relativee {
+        position: relative;
+        top: -37rem ;
+    }
+
 .mr-2 {
   margin-right: 0.2rem;
 }
@@ -307,6 +312,11 @@ font-size: 0.775rem;
   margin-left: -3rem !important;
 }
 }
+
+
+
+
+
 
 @media (max-width: 890px) {
   .grid-cols-5 .md\:w-96 {
@@ -679,7 +689,7 @@ font-size: 0.775rem;
 
 
 }
-@media (min-width: 440px) and (max-width: 480px){
+@media (min-width: 390px) and (max-width: 480px){
   .text-7xl {
         text-align: center;
         font-size: 3.5rem !important;
@@ -689,6 +699,13 @@ font-size: 0.775rem;
     height: 150vh !important;
 }
 
+  .h-screen{
+    padding: 0 2rem;
+  }
+
+  .grid-cols-2{
+    width: 18.5rem !important;
+  }
     .md\:w-96 {
         width: 22rem !important;
         top: 1rem;
@@ -698,6 +715,11 @@ font-size: 0.775rem;
         height: 16.3rem !important;
     }
 
+    .relativee{
+      
+      position: relative;
+      top: 0rem;
+}
 .phone {
         position: relative;
         top: 1rem;
