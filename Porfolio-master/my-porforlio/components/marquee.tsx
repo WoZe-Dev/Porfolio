@@ -12,7 +12,7 @@ const Marquee: React.FC = () => {
     <><AuroraBackgroundmarque>
       <div className=" box-textt   margin-text grid grid-cols-3  margin: auto; gap-4 items-center justify-center space-y-4 w-full h-screen flex">
 
-        <h2 className="text-xs opacity-70 col-span-4 sm:col-span-3">Full-Stack Developer</h2>
+        <h2 className="text-xs opacity-70 col-span-4 sm:col-span-3">Développeur Full-Stack</h2>
         <p>
           <svg xmlns="http://www.w3.org/2000/svg" className="mr-1 inline fill-current" width="21" height="21" viewBox="0 0 256 256">
             <g>
@@ -20,12 +20,11 @@ const Marquee: React.FC = () => {
               <path d="m220.2 100l-18-31.18a28 28 0 0 0-47.3-1.92l-15.34-26.59a28 28 0 0 0-48.12-.63a28 28 0 0 0-43 34.78l3.34 5.79a28 28 0 0 0-22 41.92l38 65.82a87.46 87.46 0 0 0 53.43 41a88.56 88.56 0 0 0 22.92 3A88 88 0 0 0 220.2 100Z"></path>
             </g>
           </svg>
-          <span>Hello, welcome to my little corner on the web!</span>
+          <span>Hey, bienvenue dans mon petit coin du web !</span>
         </p>
 
         <p>
-          I'm a self-taught code solutions programmer, I love programming and I try to use the most software architecture, clean and maintainable code. I like to work with technologies from the
-          Javascript, Typescript,Python and Rust ecosystem <strong></strong> <strong></strong> <strong> </strong>{' '}
+          Je suis développeur autodidacte spécialisé dans les solutions logicielles. Passionné de programmation, je m'efforce d'utiliser une architecture logicielle optimale et un code propre et maintenable. J'apprécie particulièrement travailler avec les technologies des écosystèmes suivants :{' '}
           <a href="https://www.javascript.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-px rounded-md border border-neutral-200 bg-neutral-200/30 px-1 text-sm transition hover:border-[rgba(240,219,79,.5)] hover:bg-[rgba(240,219,79,.1)] dark:border-neutral-800 dark:bg-neutral-800/30 dark:hover:border-[rgba(240,219,79,.5)] dark:hover:bg-[rgba(240,219,79,.1)]">
             <svg width="1em" height="1em" viewBox="0 0 128 128"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"></path><path fill="#323330" d="M116.347 96.736..."></path></svg>
             <span className="text-base">JavaScript</span>
@@ -33,35 +32,29 @@ const Marquee: React.FC = () => {
           <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-px rounded-md border border-neutral-200 bg-neutral-200/30 px-1 text-sm transition hover:border-[rgba(0,122,204,.5)] hover:bg-[rgba(0,122,204,.1)] dark:border-neutral-800 dark:bg-neutral-800/30 dark:hover:border-[rgba(0,122,204,.5)] dark:hover:bg-[rgba(0,122,204,.1)]">
             <svg width="1em" height="1em" viewBox="0 0 128 128"><path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path><path data-name="original" fill="#007acc" d="M1.5 63.91..."></path></svg>
             <span className="text-base">TypeScript</span>
-          </a>, and other languages.
+          </a>, et d'autres langages.
         </p>
         <p>
-          See more{' '}
-          <a className="inline-flex items-center rounded-md px-1 font-medium text-black transition hover:bg-neutral-200/50 dark:text-white dark:hover:bg-neutral-800/50" href="/about">
-            about me
+          Voir plus{' '}
+          <a className="inline-flex items-center rounded-md px-1 font-medium text-black transition hover:bg-neutral-200/50 dark:text-white dark:hover:bg-neutral-800/50" href="/experience">
+            à propos de moi
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
           </a>{' '}
-          or check out{' '}
+          ou consultez{' '}
           <a className="inline-flex items-center rounded-md px-1 font-medium text-black transition hover:bg-neutral-200/50 dark:text-white dark:hover:bg-neutral-800/50" href="/projects">
-            my projects
+            mes projets
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
           </a>.
         </p>
         <p>
-          You can also learn something new on my{' '}
+          Vous pouvez également apprendre quelque chose de nouveau sur mon{' '}
           <a className="inline-flex items-center rounded-md px-1 font-medium text-black transition hover:bg-neutral-200/50 dark:text-white dark:hover:bg-neutral-800/50" href="/blog">
-            blog posts
+            blog
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-          </a>{' '}
-          or my{' '}
-          <a className="inline-flex items-center rounded-md px-1 font-medium text-black transition hover:bg-neutral-200/50 dark:text-white dark:hover:bg-neutral-800/50" href="/blog/til">
-            "Today I Learn"
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-          </a>{' '}
-          notes!
+          </a>
         </p>
         <p>
-          I'd love to hear your ideas and collaborate where possible!
+          J’aimerais beaucoup découvrir vos idées et collaborer dès que l’occasion se présente.
         </p>
 
 
