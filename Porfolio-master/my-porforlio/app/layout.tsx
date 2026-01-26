@@ -20,15 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-<<<<<<< HEAD
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Playwrite+SK:wght@100..400&display=swap"
           rel="stylesheet"
         />
       </head>
-=======
->>>>>>> 007a9c91f2c1cce0a128e471156d33093885cbf7
       <body className={inter.className}>
         <StyledComponentsRegistry>
           <ThemeProvider>{children}</ThemeProvider>
