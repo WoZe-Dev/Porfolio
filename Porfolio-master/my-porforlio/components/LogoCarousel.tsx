@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react'
 import styled, { keyframes, css, createGlobalStyle } from 'styled-components'
 
@@ -57,33 +58,10 @@ const LogoCarousel: React.FC = () => {
   const [pausedGroup2, setPausedGroup2] = useState(false)
 
   // Contrôle l'affichage effectif du carrousel
-  const [showMarquee, setShowMarquee] = useState(false)
+  const [showMarquee, setShowMarquee] = useState(true)
 
   // State pour le thème
   const [isDarkTheme, setIsDarkTheme] = useState(false)
-
-  useEffect(() => {
-    // Fonction déclenchée lorsque la page est totalement chargée
-    const handlePageLoad = () => {
-      // On attend 3 secondes avant d'activer l'affichage (ici seulement 10ms pour la démo)
-      setTimeout(() => {
-        setShowMarquee(true)
-      }, 10)
-    }
-
-    // Vérifie si la page est déjà chargée (cas d’un rafraîchissement rapide)
-    if (document.readyState === 'complete') {
-      handlePageLoad()
-    } else {
-      // Sinon, on écoute l'événement load
-      window.addEventListener('load', handlePageLoad)
-    }
-
-    // Nettoyage si le composant se démonte avant le load (très rare)
-    return () => {
-      window.removeEventListener('load', handlePageLoad)
-    }
-  }, [])
 
   // Add a useEffect to detect system theme or parent theme changes
   useEffect(() => {
@@ -274,7 +252,9 @@ const ImageGroup = styled.div`
   width: clamp(2rem, 3rem + 1vmin, 4rem);
 `
 
-const Image = styled.img<{ isDarkTheme?: boolean }>`
+const Image = styled.img.withConfig({
+  shouldForwardProp: (prop) => prop !== 'isDarkTheme',
+})<{ isDarkTheme?: boolean }>`
   object-fit: contain;
   width: 70%;
   height: 100%;

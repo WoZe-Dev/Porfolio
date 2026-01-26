@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -25,7 +27,7 @@ export default async function AdminPage() {
         <h1 className="text-3xl font-bold text-gray-800">Tableau de Bord</h1>
         <div className="flex items-center space-x-4">
           <Link href="/" className="text-gray-600 hover:text-gray-800">Retour au site</Link>
-          <Link href="/admin/posts/new" className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-500">
+          <Link href="/connexions/posts/new" className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-500">
             Nouvel article
           </Link>
         </div>
@@ -65,7 +67,7 @@ export default async function AdminPage() {
                   </td>
                   <td className="py-3 px-4 border-b">
                     <Link 
-                      href={`/admin/posts/${post.slug}`} 
+                      href={`/connexions/posts/${post.slug}`} 
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium transition"
                     >
                       Éditer
