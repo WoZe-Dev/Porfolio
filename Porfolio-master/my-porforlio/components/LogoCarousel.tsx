@@ -5,15 +5,15 @@ import styled, { keyframes, css, createGlobalStyle } from 'styled-components'
  * Tableau pour la première ligne (défilement normal)
  */
 const logosLine1 = [
-  'next-js.256x256.png',
-  'tailwind-css.svg',
-  'typescript-icon.svg',
-  'react.svg',
-  'javascript-js.svg',
-  'node-js.svg',
-  'figma.svg',
-  'file-type-css.svg',
-  'file-type-html.svg',
+  '/next-js.256x256.png',
+  '/tailwind-css.svg',
+  '/typescript-icon.svg',
+  '/react.svg',
+  '/javascript-js.svg',
+  '/node-js.svg',
+  '/figma.svg',
+  '/file-type-css.svg',
+  '/file-type-html.svg',
   // ...
 ]
 
@@ -21,15 +21,15 @@ const logosLine1 = [
  * Tableau pour la deuxième ligne (défilement inversé)
  */
 const logosLine2 = [
-  'linux.svg',
-  'photoshop.svg',
-  'php.svg',
-  'python.svg',
-  'sql.svg',
-  'wordpress.svg',
-  'laravel.svg',
-  'gitt.svg',
-  'github.svg',
+  '/linux.svg',
+  '/photoshop.svg',
+  '/php.svg',
+  '/python.svg',
+  '/sql.svg',
+  '/wordpress.svg',
+  '/laravel.svg',
+  '/gitt.svg',
+  '/github.svg',
   // ...
 ]
 

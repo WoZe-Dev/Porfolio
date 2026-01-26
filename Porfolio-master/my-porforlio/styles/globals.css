@@ -12,6 +12,10 @@
 }
 
 
+
+
+
+
 .w-full-admin{
   max-width: none;
   width: 100%;
@@ -698,5 +702,8 @@ font-size: 0.775rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
+
+
+
 
 
