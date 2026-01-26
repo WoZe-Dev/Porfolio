@@ -7,5 +7,8 @@ export default withAuth({
 })
 
 export const config = {
-  matcher: ["/admin/:path*"] // Protège toutes les routes sous /admin
+  matcher: [
+    "/connexions",
+    "/connexions/posts/:path*"
+  ]
 }
