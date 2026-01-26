@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import LogoCarousel from '../components/LogoCarousel';
 import { CardStackDemo } from '../components/card-stack'
+import Image from 'next/image';
 
 const WobbleCard: React.FC = () => {
   return (
@@ -15,15 +16,13 @@ const WobbleCard: React.FC = () => {
           rel="noopener noreferrer"
         >
           <span aria-hidden="true" className="pointer-events-none absolute inset-1 -z-20">
-            <img
+            <Image
               alt="cat img"
               loading="lazy"
-              width="564"
-              height="642"
-              decoding="async"
-              data-nimg="1"
+              width={564}
+              height={642}
               className="absolute inset-1 h-full w-full rounded-lg object-cover object-center brightness-[0.7]"
-              src="home.png"
+              src="/home.png"
               style={{ color: "transparent" }}
             />
             <span aria-hidden="true" className="absolute inset-1 bg-gradient-to-t  to-neutral-900/20 dark:bg-neutral-900/50"></span>
@@ -139,24 +138,20 @@ const WobbleCard: React.FC = () => {
               <div className="truncate text-xs font-normal">Les plus écoutés ce mois-ci</div>
             </div>
           </div>
-          <img
+          <Image
             alt="J'T'Emmène Au Vent"
             loading="lazy"
-            width="200"
-            height="200"
-            decoding="async"
-            data-nimg="1"
+            width={200}
+            height={200}
             className="absolute -bottom-10 -left-14 -z-10 rounded-full blur-2xl"
             src="https://lastfm.freetls.fastly.net/i/u/770x0/dd330235b9ecf77531534135e44a9108.jpg#dd330235b9ecf77531534135e44a9108"
             style={{ color: "transparent" }}
           />
-          <img
+          <Image
             alt="Fantasma (Versão Gordão do Pc)"
             loading="lazy"
-            width="200"
-            height="200"
-            decoding="async"
-            data-nimg="1"
+            width={200}
+            height={200}
             className="absolute bottom-13 -left-16 animate-spin overflow-hidden rounded-full animate-duration-[120s]"
             src="https://lastfm.freetls.fastly.net/i/u/770x0/dd330235b9ecf77531534135e44a9108.jpg#dd330235b9ecf77531534135e44a9108"
             style={{ color: "transparent" }}

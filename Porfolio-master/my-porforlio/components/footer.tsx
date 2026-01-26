@@ -15,15 +15,15 @@ const AppFooter: React.FC = () => {
       <div className="w-full flex flex-col md:flex-row justify-between items-center px-6">
         <Footer.Copyright
           href="#"
-          by="Your Company™"
+          by="voxio"
           year={new Date().getFullYear()}
         />
         
         <Footer.LinkGroup className="flex space-x-4 mt-2 md:mt-0">
-          <Footer.Link href="#">About</Footer.Link>
-          <Footer.Link href="#">Privacy Policy</Footer.Link>
-          <Footer.Link href="#">Licensing</Footer.Link>
-          <Footer.Link href="#">Contact</Footer.Link>
+          <Footer.Link href="/">Home</Footer.Link>
+          <Footer.Link href="/projects">Projects</Footer.Link>
+          <Footer.Link href="/blog">Blog</Footer.Link>
+          <Footer.Link href="/experience">Experience</Footer.Link>
         </Footer.LinkGroup>
         </div>
       

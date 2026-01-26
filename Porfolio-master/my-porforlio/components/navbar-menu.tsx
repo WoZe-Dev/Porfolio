@@ -4,7 +4,18 @@ import React, { useState, useContext, useEffect } from "react";
 import { MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import { ThemeContext } from "../content/ThemeContext";
-import { Sun, Moon, Menu, X, Home, BookOpen, FolderGit2, Users, Briefcase, ScrollText, ExternalLink } from 'lucide-react';
+import {
+  Sun,
+  Moon,
+  Menu,
+  X,
+  Home,
+  FolderGit2,
+  Briefcase,
+  ScrollText,
+  ExternalLink,
+} from "lucide-react";
+import Image from "next/image";
 
 export function NavbarDemo() {
   return (
@@ -21,25 +32,21 @@ function Navbar({ className }: { className?: string }) {
 
   const logoSrc = theme === "dark" ? "/voxio.svg" : "/img-ilia.svg";
 
-  // Add effect to control body scroll
   useEffect(() => {
     if (isMenuOpen) {
-      // Prevent scrolling on body when menu is open
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
     } else {
-      // Re-enable scrolling when menu is closed
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
     }
 
-    // Cleanup effect
     return () => {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
     };
   }, [isMenuOpen]);
 
@@ -60,51 +67,53 @@ function Navbar({ className }: { className?: string }) {
           )}
         >
           <a href="/" className="flex items-center">
-            <img src={logoSrc} alt="Brandify Logo" className="h-8" />
+            <Image src={logoSrc} alt="Brandify Logo" width={32} height={32} className="h-8" />
           </a>
-          
+
           <ul className="hidden md:flex space-x-4">
             {menuItems.map((item) => (
-              <MenuItem key={item.name} setActive={setActive} active={active} item={item.name} href={item.href} />
+              <MenuItem
+                key={item.name}
+                setActive={setActive}
+                active={active}
+                item={item.name}
+                href={item.href}
+              />
             ))}
           </ul>
 
           <div className="flex gap-2 items-center">
             <button
               onClick={() => toggleTheme(theme === "dark" ? "light" : "dark")}
-              className={cn(
-                "inline-flex items-center button-voxio justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow-sm h-9 w-9 px-2",
-                theme === "dark" ? "bg-black text-white border-white" : "bg-white text-black border-black"
-              )}
-              type="button"
-              aria-label="Toggle theme"
+              className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm"
+              aria-label="Changer le thème"
             >
               {theme === "dark" ? (
-                <Sun className="h-[1.2rem] w-[1.2rem]" />
+                <Sun className="h-4 w-4 text-yellow-400" />
               ) : (
-                <Moon className="h-[1.2rem] w-[1.2rem]" />
+                <Moon className="h-4 w-4 text-gray-900" />
               )}
             </button>
- 
+
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={cn(
-              "md:hidden inline-flex items-center button-voxio justify-center rounded-md text-sm font-medium h-9 w-9 px-2",
-              theme === "dark" ? "text-white" : "text-black"
+                "md:hidden inline-flex items-center button-voxio justify-center rounded-md text-sm font-medium h-9 w-9 px-2",
+                theme === "dark" ? "text-white" : "text-black"
               )}
-              aria-label="Toggle menu"
+              aria-label="Ouvrir le menu"
             >
               {isMenuOpen ? (
-              <X className="h-[1.2rem] w-[1.2rem]" />
+                <X className="h-[1.2rem] w-[1.2rem]" />
               ) : (
-              <Menu className="h-[1.2rem] w-[1.2rem]" />
+                <Menu className="h-[1.2rem] w-[1.2rem]" />
               )}
             </button>
           </div>
         </nav>
       </div>
 
-      {/* Mobile Menu Overlay with Blur Effect */}
+      {/* Mobile Menu Overlay */}
       <div
         className={cn(
           "fixed inset-0 backdrop-blur-md bg-white/30 dark:bg-black/30 z-40 md:hidden transition-all duration-300",
@@ -113,7 +122,7 @@ function Navbar({ className }: { className?: string }) {
         onClick={() => setIsMenuOpen(false)}
       />
 
-      {/* Mobile Menu Sidebar */}
+      {/* Mobile Sidebar */}
       <div
         className={cn(
           "fixed top-0 right-0 h-full w-64 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-50 transform transition-transform duration-300 ease-in-out md:hidden shadow-xl overflow-y-auto",
@@ -121,12 +130,26 @@ function Navbar({ className }: { className?: string }) {
         )}
       >
         <div className="flex flex-col h-full">
-          <div className="p-4">
+          {/* Top row: close + theme toggle */}
+          <div className="p-4 flex justify-between items-center">
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="ml-auto flex items-center justify-center w-8 h-8 rounded-full bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm"
+              className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm"
+              aria-label="Fermer le menu"
             >
               <X className="h-4 w-4 text-black dark:text-white" />
+            </button>
+
+            <button
+              onClick={() => toggleTheme(theme === "dark" ? "light" : "dark")}
+              className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm"
+              aria-label="Changer le thème"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-4 w-4 text-yellow-400" />
+              ) : (
+                <Moon className="h-4 w-4 text-gray-900" />
+              )}
             </button>
           </div>
 

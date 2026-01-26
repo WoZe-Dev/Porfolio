@@ -1,62 +1,61 @@
-import { NextResponse } from "next/server"
-import { getServerSession } from "next-auth"
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import fs from "fs"
-import path from "path"
+// app/api/admin/posts/route.ts
+import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/authOptions";   // ✅ nouveau chemin
+import fs from "fs";
+import path from "path";
 
-function slugify(str: string) {
-  return str
-    .toString()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim()
-    .replace(/[\s\W-]+/g, '-')
+/*---------------------------------------------------------------
+  Exemple : GET  – liste tous les fichiers markdown des articles
+----------------------------------------------------------------*/
+export async function GET() {
+  const session = await getServerSession(authOptions);
+
+  if (!session || (session.user as any).role !== "admin") {
+    return NextResponse.json({ error: "Not authorized" }, { status: 401 });
+  }
+
+  const postsDir = path.join(process.cwd(), "content", "posts");
+  const files = fs.existsSync(postsDir) ? fs.readdirSync(postsDir) : [];
+
+  return NextResponse.json({ files }, { status: 200 });
 }
 
+/*---------------------------------------------------------------
+  Exemple : POST – crée un nouveau brouillon vide
+----------------------------------------------------------------*/
 export async function POST(req: Request) {
-  const session = await getServerSession(authOptions)
-  if (!session || session.user.role !== 'admin') {
-    return NextResponse.json({ error: "Not authorized" }, { status: 401 })
+  const session = await getServerSession(authOptions);
+
+  if (!session || (session.user as any).role !== "admin") {
+    return NextResponse.json({ error: "Not authorized" }, { status: 401 });
   }
 
-  try {
-    const { title, subtitle, description, tags, category, published } = await req.json()
-    
-    // Vérifier si tags est un tableau. Si c’est une chaîne, le code suivant échouera.
-    // Si vous écrivez des tags séparés par des virgules côté client, transformez-les d’abord en tableau:
-    let tagsArray: string[]
-    if (typeof tags === 'string') {
-      tagsArray = tags.split(',').map((t: string) => t.trim()).filter(Boolean)
-    } else {
-      tagsArray = Array.isArray(tags) ? tags : []
-    }
+  const { title = "Nouvel article" } = await req.json();
+  const slug = title
+    .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/[\s\W-]+/g, "-");
 
-    const slug = slugify(title)
-    const frontMatter =
-`---
-title: "${title}"
-subtitle: "${subtitle}"
-tags: [${tagsArray.map((t: string) => `"${t}"`).join(',')}]
-category: "${category}"
-published: ${published}
----
+  const postsDir = path.join(process.cwd(), "content", "posts");
+  if (!fs.existsSync(postsDir)) fs.mkdirSync(postsDir, { recursive: true });
 
-${description}
-`
-
-    const filePath = path.join(process.cwd(), 'content', 'posts', `${slug}.md`)
-
-    // Vérifier que content/posts existe
-    if (!fs.existsSync(path.join(process.cwd(), 'content', 'posts'))) {
-      fs.mkdirSync(path.join(process.cwd(), 'content', 'posts'), { recursive: true })
-    }
-
-    fs.writeFileSync(filePath, frontMatter, 'utf-8')
-
-    return NextResponse.json({ success: true })
-  } catch (err) {
-    console.error("Erreur lors de la création de l'article :", err)
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })
+  const filePath = path.join(postsDir, `${slug}.md`);
+  if (fs.existsSync(filePath)) {
+    return NextResponse.json(
+      { error: "File already exists" },
+      { status: 409 }
+    );
   }
+
+  fs.writeFileSync(
+    filePath,
+    `---\ntitle: "${title}"\nsubtitle: ""\ntags: []\ncategory: ""\npublished: false\npublishDate: "${new Date().toISOString()}"\n---\n\n`,
+    "utf-8"
+  );
+
+  return NextResponse.json({ slug }, { status: 201 });
 }
