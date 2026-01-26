@@ -1,21 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
-
+import React, { Suspense, lazy } from "react";
 import { NavbarDemo } from "../components/navbar-menu";
-import { AuroraBackgroundDemo } from "../components/arrire-plant";
-import Marquee from "../components/marquee";
+
+// Lazy loading des composants lourds avec prefetch
+const AuroraBackgroundDemo = lazy(() => import("../components/arrire-plant").then(mod => ({ default: mod.AuroraBackgroundDemo })));
+const Marquee = lazy(() => import("../components/marquee"));
 
 export default function Home() {
-
-
   return (
-
-      <div>
+    <div>
+      <Suspense fallback={null}>
         <AuroraBackgroundDemo />
-        <NavbarDemo />
+      </Suspense>
+      <NavbarDemo />
+      <Suspense fallback={null}>
         <Marquee />
-      </div>
-
+      </Suspense>
+    </div>
   );
 }

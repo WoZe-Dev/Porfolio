@@ -1,5 +1,5 @@
 ---
-title: "Cours Complet de JavaScript"
+title: "Cours Complet de JavaScrip"
 subtitle: "JavaScript"
 tags: ["#JavaScript"]
 category: "JavaScript"
@@ -11,7 +11,12 @@ published: true
 
 
 
-> _Un guide du débutant à avancé pour maîtriser JavaScript, le langage de script du web._
+
+
+
+
+
+> _Un guide du débutant pour maîtriser JavaScript_
 
 
 ## Sommaire
@@ -238,6 +243,11 @@ import { addition } from "./util.js";
 1. Écrire une fonction qui inverse une chaîne.
 2. Créer un compteur cliquable en HTML + JS.
 3. Manipuler un tableau pour extraire les valeurs paires.
+
+
+
+
+
 
 
 

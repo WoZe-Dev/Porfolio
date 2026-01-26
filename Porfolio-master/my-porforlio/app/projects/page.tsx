@@ -2,6 +2,7 @@ import React from 'react';
 import { NavbarDemo } from "@/components/navbar-menu";
 import { Github, Globe } from 'lucide-react';
 import Footer from "@/components/footer";
+import Image from 'next/image';
 
 function App() {
   return (
@@ -19,17 +20,19 @@ function App() {
           {/* Project Card 1 */}
           <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg dark:border-neutral-900 dark:bg-neutral-1000">
             <div className="h-48 w-full">
-              <img 
+              <Image 
                 alt="E-commerce Platform" 
                 className="h-full w-full object-cover object-top"
-                src="recherche-img.PNG"
+                src="/recherche-img.png"
+                width={500}
+                height={500}
               />
             </div>
             <div className=" bg-white dark:bg-black flex flex-1 flex-col p-5">
               <div>
                 <div className="mb-10 flex flex-col items-center gap-2 md:mb-4 md:flex-row">
                   <h2 className=" bg-white dark:bg-black   dark:text-white text-center text-lg font-bold md:text-left">
-                  Recherche d'images
+                  Recherche d&apos;images
                   </h2>
                 </div>
                 <p className=" dark:text-white  text-justify text-sm md:text-left">
@@ -77,10 +80,12 @@ function App() {
           {/* Project Card 2 */}
           <div className="flex h-full flex-col bg-white dark:bg-black overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg dark:border-neutral-900 dark:bg-neutral-1000">
             <div className="h-48 w-full">
-              <img 
+              <Image 
                 alt="AI Chat Application" 
                 className="h-full w-full object-cover object-top"
-                src="betweenus.PNG"
+                src="/betweenus.png"
+                width={500}
+                height={500}
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
@@ -134,10 +139,12 @@ function App() {
           {/* Project Card 3 */}
           <div className="flex h-full flex-col bg-white dark:bg-black overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg dark:border-neutral-900 dark:bg-neutral-1000">
             <div className="h-48 w-full">
-              <img 
+              <Image 
                 alt="Fitness Tracker" 
                 className="h-full w-full object-cover object-top"
-                src="retouche-photo.png"
+                src="/retouche-photo.png"
+                width={500}
+                height={500}
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
@@ -174,17 +181,19 @@ function App() {
           {/* Project Card 4 */}
           <div className="flex h-full bg-white dark:bg-black flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-lg dark:border-neutral-900 dark:bg-neutral-1000">
             <div className="h-48 w-full">
-              <img 
+              <Image 
                 alt="Smart Home Dashboard" 
                 className="h-full w-full object-cover object-top"
-                src="Kanboard.png"
+                src="/kanboard.png"
+                width={500}
+                height={500}
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
               <div>
                 <div className="mb-10 flex flex-col items-center gap-2 md:mb-4 md:flex-row">
                   <h2 className=" dark:text-white text-center text-lg font-bold md:text-left">
-                   Kanboard ( en cours de développement )
+                   Collaboration ( trello )
                   </h2>
                 </div>
                 <p className="dark:text-white text-justify text-sm md:text-left">
@@ -209,7 +218,7 @@ function App() {
               </div>
               <div className="mt-9 flex flex-1 items-end justify-center gap-2">
                 <a 
-                  href="#" 
+                  href="https://github.com/mohed-abbas/collaboard" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="flex items-center gap-2 rounded-2xl bg-[rgba(24,23,23,0.1)] p-2 text-[rgb(24,23,23)] hover:bg-[rgb(24,23,23)] hover:text-[rgb(246,248,250)] dark:bg-[rgb(246,248,250,0.1)] dark:text-[rgb(246,248,250)] dark:hover:bg-[rgb(246,248,250)] hover:dark:text-[rgb(24,23,23)]"
@@ -218,12 +227,12 @@ function App() {
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="/collaboard" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="flex items-center gap-2 rounded-2xl p-2 text-neutral-700 hover:bg-neutral-900 hover:text-neutral-50 dark:bg-neutral-600/5 dark:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-900"
                 >
-                  Website ( bientôt )
+                  Website
                   <Globe className="h-5 w-5" />
                 </a>
               </div>
