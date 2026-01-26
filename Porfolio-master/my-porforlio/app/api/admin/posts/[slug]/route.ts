@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+import { authOptions } from "@/lib/authOptions";
 import fs from "fs"
 import path from "path"
 
@@ -20,7 +20,13 @@ export async function PUT(req: Request, { params }: { params: { slug: string } }
     return NextResponse.json({ error: "Not authorized" }, { status: 401 })
   }
 
-  const { title, subtitle, description, tags, category, published } = await req.json()
+  const { title, subtitle, description, tags, category, published, publishDate } = await req.json()
+  
+  // Debug: voir ce qui est reçu
+  console.log("=== API PUT /api/admin/posts/[slug] ===")
+  console.log("publishDate reçu:", publishDate)
+  console.log("Type:", typeof publishDate)
+  
   const slug = slugify(title)
   const postsDir = path.join(process.cwd(), 'content', 'posts')
   if (!fs.existsSync(postsDir)) {
@@ -34,6 +40,7 @@ subtitle: "${subtitle}"
 tags: [${tags.map((t: string) => `"${t}"`).join(',')}]
 category: "${category}"
 published: ${published}
+publishDate: "${publishDate}"
 ---
 
 ${description}

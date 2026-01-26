@@ -1,6 +1,7 @@
-// components/Statistics.tsx
+"use client";
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const Statistics: React.FC = () => {
   // Date de naissance en millisecondes
@@ -21,7 +22,7 @@ const Statistics: React.FC = () => {
     const interval = setInterval(updateAge, 16); // ~60 FPS pour un affichage fluide
 
     return () => clearInterval(interval); // Nettoyage lors du démontage
-  }, []);
+  }, [birthTime]);
 
   const data = [
     { label: 'My Age', value: preciseAge }, // Mise à jour dynamique de l'âge
@@ -48,7 +49,7 @@ const Statistics: React.FC = () => {
             <span className="inline-flex dark:text-white items-center gap-2 text-neutral-600">
               {item.label}
               {item.icon && (
-                <img src={item.icon} alt={`${item.label} icon`} className="w-4 h-4 " />
+                <Image src={`/${item.icon}`} alt={`${item.label} icon`} width={16} height={16} className="w-4 h-4 " />
               )}
             </span>
             <div className="flex w-full justify-center text-xl lg:justify-start">

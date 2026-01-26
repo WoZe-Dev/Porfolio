@@ -1,3 +1,6 @@
+export const dynamic = 'force-dynamic'
+export const revalidate = 0 // Désactiver le cache
+
 import matter from "gray-matter";
 import path from "path";
 import fs from "fs";
@@ -10,7 +13,7 @@ type Post = {
   slug: string;
   title: string;
   subtitle: string;
-  date?: string;
+  displayDate?: string;
   createdAt: string;
   readingTime?: string;
   published: boolean;
@@ -31,13 +34,21 @@ async function getPosts(): Promise<Post[]> {
       const rawContent = fs.readFileSync(filePath, "utf-8");
       const { data } = matter(rawContent);
 
-      const stat = fs.statSync(filePath);
-      const createdAt = data.createdAt || stat.birthtime.toISOString();
+      // Utiliser publishDate en priorité, puis date, sinon la date actuelle
+      const dateToShow = data.publishDate || data.date || new Date().toISOString();
 
+      // Important: Ne pas utiliser ...data car il contient date qui peut être undefined
       return {
         slug: file.replace(/\.md$/, ""),
-        ...data,
-        createdAt,
+        title: data.title,
+        subtitle: data.subtitle,
+        tags: data.tags,
+        category: data.category,
+        published: data.published,
+        publishDate: data.publishDate,
+        readingTime: data.readingTime,
+        displayDate: dateToShow,  // Nouvelle clé pour eviter les conflits
+        createdAt: dateToShow, // Utiliser la même date
       };
     })
     .filter((post: any) => post.published);
@@ -49,7 +60,7 @@ export default async function BlogPage() {
   const posts = await getPosts();
 
   const postsByYear: Record<string, Post[]> = posts.reduce((acc, post) => {
-    const dateToUse = (post.date && isValidDate(post.date)) ? post.date : post.createdAt;
+    const dateToUse = (post.displayDate && isValidDate(post.displayDate)) ? post.displayDate : post.createdAt;
     const postDate = new Date(dateToUse);
     const year = isNaN(postDate.getTime())
       ? "Inconnue"
@@ -91,11 +102,12 @@ export default async function BlogPage() {
                     </div>
                     <div className="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 md:flex-col md:items-end md:gap-2">
                       <time 
-                        dateTime={post.date || post.createdAt}
+                        dateTime={post.displayDate || post.createdAt}
                         className="flex items-center gap-2 md:flex-row-reverse"
                       >
                         <Calendar className="w-[1em] h-[1em]" />
-                        {new Date(post.date || post.createdAt).toLocaleDateString('en-US', {
+                        {new Date(post.displayDate || post.createdAt).toLocaleDateString('fr-FR', {
+                          year: 'numeric',
                           month: 'short',
                           day: 'numeric'
                         })}
