@@ -12,6 +12,9 @@ import Link from 'next/link'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 // Types
 interface BlogPostMetadata {
   title: string
@@ -127,7 +130,7 @@ function NotFound() {
         <span className="text-2xl">🤔</span>
       </div>
       <h1 className="text-4xl font-bold text-red-500">Article Not Found</h1>
-      <p className="text-zinc-400">The article you're looking for doesn't exist or has been moved.</p>
+      <p className="text-zinc-400"></p>
       <Link 
         href="/blog" 
         className="mt-4 px-6 py-2 bg-zinc-900 text-zinc-300 rounded-full hover:bg-zinc-800 transition-colors"
@@ -152,10 +155,23 @@ async function getBlogPost(slug: string): Promise<{
   const rawContent = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(rawContent)
 
+  // Formater la date si elle existe
+  let formattedDate = ''
+  if (data.publishDate) {
+    const date = new Date(data.publishDate)
+    formattedDate = date.toLocaleDateString('fr-FR', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    })
+  } else if (data.date) {
+    formattedDate = data.date
+  }
+
   const metadata: BlogPostMetadata = {
     title: data.title || 'Untitled Article',
     subtitle: data.subtitle || '',
-    date: data.date || '',
+    date: formattedDate,
     readingTime: data.readingTime || '',
     tags: Array.isArray(data.tags) ? data.tags : []
   }

@@ -11,7 +11,7 @@ export default function LoginPage() {
     await signIn('credentials', {
       email,
       password,
-      callbackUrl: "/admin" // Une fois connecté, redirige vers /admin
+      callbackUrl: "/connexions" // Une fois connecté, redirige vers /connexions
     })
   }
 

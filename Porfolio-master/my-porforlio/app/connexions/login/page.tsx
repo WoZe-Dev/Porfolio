@@ -10,7 +10,7 @@ export default function AdminLoginPage() {
     e.preventDefault()
     await signIn('credentials', {
       email, password,
-      callbackUrl: '/admin'
+      callbackUrl: '/connexions'
     })
   }
 

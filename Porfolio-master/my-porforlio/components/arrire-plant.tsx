@@ -6,6 +6,7 @@ import React from "react";
 import { AuroraBackground } from "./ui/aurora-background";
 import { TypeAnimation } from 'react-type-animation';
 import WobbleCard from "./WobbleCard";
+import Image from 'next/image';
 
 export function AuroraBackgroundDemo() {
   return (
@@ -18,26 +19,26 @@ export function AuroraBackgroundDemo() {
       >
         <div className="absolute -z-50 h-64 w-64 bg-[conic-gradient(transparent,rgb(0,0,0))] opacity-15 blur-2xl dark:bg-[conic-gradient(transparent,rgb(255,255,255))] md:left-36"></div>
         <div className="absolute left-1/2 top-1/2 w-max -translate-x-1/2 -translate-y-1/2 opacity-10 dark:opacity-5 md:hidden">
-          <img
+          <Image
             alt="Deconstructed Robot Light"
             loading="lazy"
-            width="466"
-            height="468"
+            width={466}
+            height={468}
             decoding="async"
             data-nimg="1"
             className="w-96 object-cover dark:hidden"
-            src="Avatar.svg"
+            src="/Avatar.svg"
             style={{ color: "transparent" }}
           />
-          <img
+          <Image
             alt="Deconstructed Robot Dark"
             loading="lazy"
-            width="466"
-            height="468"
+            width={466}
+            height={468}
             decoding="async"
             data-nimg="1"
             className="hidden w-96 dark:block"
-            src="Avatar.svg"
+            src="/Avatar.svg"
             style={{ color: "transparent" }}
           />
         </div>
@@ -62,26 +63,26 @@ export function AuroraBackgroundDemo() {
             </span>
           </div>
           <div className="hidden flex-1 items-center justify-end md:flex">
-            <img
+            <Image
               alt="Deconstructed Robot Light"
               loading="lazy"
-              width="466"
-              height="468"
+              width={466}
+              height={468}
               decoding="async"
               data-nimg="1"
               className="w-72 dark:hidden"
-              src="Avatar.svg"
+              src="/Avatar.svg"
               style={{ color: "transparent" }}
             />
-            <img
+            <Image
               alt="Deconstructed Robot Dark"
               loading="lazy"
-              width="466"
-              height="468"
+              width={466}
+              height={468}
               decoding="async"
               data-nimg="1"
               className="hidden w-72 dark:block"
-              src="Avatar.svg"
+              src="/Avatar.svg"
               style={{ color: "transparent" }}
             />
           </div>

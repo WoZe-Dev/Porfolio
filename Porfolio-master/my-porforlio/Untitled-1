@@ -1,0 +1,168 @@
+# --------------------------------------------------------------------
+# 1.  Redirection HTTP ? HTTPS
+# --------------------------------------------------------------------
+server {
+    listen 80;
+    server_name voxio.fr www.voxio.fr;
+    return 301 https://$host$request_uri;
+}
+
+# --------------------------------------------------------------------
+# 2.  Virtual-host HTTPS
+# --------------------------------------------------------------------
+server {
+    listen 443 ssl;
+    server_name voxio.fr www.voxio.fr;
+
+    # --- TLS Let's Encrypt
+    ssl_certificate     /etc/letsencrypt/live/voxio.fr/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/voxio.fr/privkey.pem;
+    include             /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam         /etc/letsencrypt/ssl-dhparams.pem;
+
+    # ============================================================================
+    # NOUVELLES RÈGLES : Gérer les assets Next.js et les redirections
+    # ============================================================================
+    
+    # Règle spécifique pour les chunks JavaScript Next.js (haute priorité)
+    location ~ ^/_next/static/chunks/ {
+        proxy_pass         http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        
+        # Headers pour le debugging
+        add_header X-Proxy-Target "nextjs-chunks" always;
+    }
+    
+    # Gestion de TOUS les autres assets Next.js (_next/static, _next/image, etc.)
+    location ~ ^/_next/ {
+        proxy_pass         http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        
+        # Headers pour le debugging  
+        add_header X-Proxy-Target "nextjs-general" always;
+    }
+
+    # Gestion du favicon
+    location = /favicon.ico {
+        proxy_pass         http://127.0.0.1:3000;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        
+        # Header pour le debugging
+        add_header X-Proxy-Target "nextjs-favicon" always;
+        access_log off;
+    }
+
+    # Redirection des routes d'authentification vers /collaboard/
+    location ~ ^/(register|login|verify-email|forgot-password|reset-password)(.*)$ {
+        return 301 /collaboard/$1$2$is_args$args;
+    }
+
+    # NOUVEAU: Redirection des pages principales vers /collaboard/
+    location ~ ^/(dashboard|settings|profile)(.*)$ {
+        return 301 /collaboard/$1$2$is_args$args;
+    }
+
+    # Redirection des assets manquants vers /collaboard/ (incluant flux)
+    location ~ ^/(livewire|storage|build|flux|js|css)/(.*)$ {
+        return 301 /collaboard/$1/$2$is_args$args;
+    }
+
+    # ============================================================================
+    # APPLICATIONS EXISTANTES
+    # ============================================================================
+
+    # ----------------------- A. Node racine :3000
+    location / {
+        proxy_pass         http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header   Upgrade           $http_upgrade;
+        proxy_set_header   Connection        "upgrade";
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # ---------------- C. Laravel Sail /collaboard/ :9000
+    location ^~ /collaboard/ {
+        # 1) préfixe destiné à Laravel
+        proxy_set_header  X-Forwarded-Prefix /collaboard;
+
+        # 2) on conserve l'hôte
+        proxy_set_header  Host $host;
+
+        # 3) on enlève le préfixe pour l'upstream
+        rewrite ^/collaboard/(.*)$ /$1 break;
+
+        # 4) passage vers Sail exposé sur l'hôte
+        proxy_pass        http://127.0.0.1:9000;
+
+        # 5) en-têtes usuels
+        proxy_http_version 1.1;
+        proxy_set_header  X-Real-IP         $remote_addr;
+        proxy_set_header  X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto $scheme;
+
+        # payloads plus gros si besoin
+        client_max_body_size 32M;
+    }
+
+    # ---------------- NOUVELLE SECTION : Livewire spécifique
+    location ~ ^/collaboard/livewire/(.*)$ {
+        # Ne pas enlever le préfixe pour Livewire - il en a besoin
+        proxy_pass        http://127.0.0.1:9000/livewire/$1$is_args$args;
+        proxy_set_header  Host              $host;
+        proxy_set_header  X-Real-IP         $remote_addr;
+        proxy_set_header  X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto $scheme;
+        proxy_set_header  X-Forwarded-Prefix /collaboard;
+        proxy_http_version 1.1;
+        
+        # Headers spécifiques pour AJAX
+        proxy_set_header  X-Requested-With  $http_x_requested_with;
+        proxy_set_header  Content-Type      $content_type;
+    }
+
+   
+    
+    # ----------------------- G. BetweenUs :8001
+    location ^~ /betweenus/ {
+        rewrite ^/betweenus/(.*)$ /$1 break;
+        proxy_pass         http://51.83.79.4:8001;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+    }
+
+    # ----------------------- H. Flask /tricycle-office-img/ :5050
+    location /tricycle-office-img/ {
+        proxy_pass         http://127.0.0.1:5050;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+    }
+
+    # ----------------------- I. Node secondaire :3000
+    location /rick-and-morty/ {
+        proxy_pass         http://51.83.79.4:3000/rick-and-morty/;
+        proxy_http_version 1.1;
+        proxy_set_header   Upgrade           $http_upgrade;
+        proxy_set_header   Connection        "upgrade";
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+    }
+}
