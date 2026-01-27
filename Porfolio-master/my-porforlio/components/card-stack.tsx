@@ -39,6 +39,23 @@ export const Highlight = ({
 ------------------------------------------------------------------- */
 const CARDS = [
   {
+    id: 1,
+    name: "Ilia Choumitzky",
+    designation: "Développeur Full-Stack",
+    content: (
+      <p className="text-smm text-neutral-700 dark:text-neutral-200">
+        ⚠️ Recherche une <Highlight>Alternance</Highlight> pour ma{" "}
+        5ème année en <Highlight>MASTER</Highlight> ⚠️
+        <br />
+        <br />
+         Étudiant en 4ᵉ année d'ingénierie du web en alternance chez Tricycle Environnement, 
+         je recherche une entreprise pour achever ma dernière année en Master, en vue d'une continuité au sein de l'entreprise.
+        <br />
+      </p>
+    ),
+  },
+
+  {
     id: 2,
     name: "Encore.ts + Next.js",
     designation: "Article SaaS",
@@ -51,7 +68,7 @@ const CARDS = [
         Apprenez à créer une application SaaS évolutive et prête pour la
         production avec <Highlight>Encore.ts</Highlight> et{" "}
         <Highlight>Next.js</Highlight>. Ce modèle intègre Clerk pour
-        l’authentification, Stripe pour les paiements, Tailwind et shadcn/ui
+        l'authentification, Stripe pour les paiements, Tailwind et shadcn/ui
         pour le style.
         <a
           href="https://dev.to/encore/build-a-production-ready-saas-application-44nb?ref=dailydev"
@@ -59,25 +76,8 @@ const CARDS = [
           target="_blank"
           rel="noopener noreferrer"
         >
-          Lire l’article
+          Lire l'article
         </a>
-      </p>
-    ),
-  },
-
-  {
-    id: 1,
-    name: "Ilia Choumitzky",
-    designation: "Développeur Full-Stack",
-    content: (
-      <p className="text-smm text-neutral-700 dark:text-neutral-200">
-        ⚠️ Recherche une <Highlight>Alternance</Highlight> pour mon{" "}
-        <Highlight>Master</Highlight> ⚠️
-        <br />
-        <br />
-        Je suis actuellement en Bachelor d’ingénierie du web en alternance chez
-        Tricycle Environnement et je cherche une entreprise pour continuer mes
-        études en Master à l’ESGI à partir de septembre 2025.
       </p>
     ),
   },
@@ -93,7 +93,7 @@ const CARDS = [
         <br />
         <br />
         PHP 9.0 introduit plusieurs améliorations : meilleur comportement
-        d’incrémentation/décrémentation, gestion des erreurs de désérialisation,
+        d'incrémentation/décrémentation, gestion des erreurs de désérialisation,
         signatures de fonctions simplifiées, règles de création de tableaux plus
         strictes…
         <br />
@@ -103,7 +103,7 @@ const CARDS = [
           target="_blank"
           rel="noopener noreferrer"
         >
-          Lire l’article
+          Lire l'article
         </a>
       </p>
     ),
