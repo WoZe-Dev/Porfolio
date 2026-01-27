@@ -684,7 +684,7 @@ font-size: 0.775rem;
 }
 
 
-@media (min-width: 350px) and (max-width: 380px){
+@media (min-width: 350px) and (max-width: 389px){
 
   .h-screen{
         padding: 0 4rem !important;
