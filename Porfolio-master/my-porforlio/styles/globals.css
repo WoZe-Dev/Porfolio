@@ -684,12 +684,19 @@ font-size: 0.775rem;
 }
 
 
+@media (min-width: 350px) and (max-width: 380px){
 
+  .h-screen{
+        padding: 0 4rem !important;
+        width: 26rem;
+  }
+
+}
 
 
 
 }
-@media (min-width: 390px) and (max-width: 480px){
+@media (min-width: 350px) and (max-width: 480px){
   .text-7xl {
         text-align: center;
         font-size: 3.5rem !important;
@@ -702,6 +709,8 @@ font-size: 0.775rem;
   .h-screen{
     padding: 0 2rem;
   }
+
+
 
   .grid-cols-2{
     width: 18.5rem !important;
