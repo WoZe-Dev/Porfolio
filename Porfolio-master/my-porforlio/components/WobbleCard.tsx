@@ -209,7 +209,7 @@ const WobbleCard: React.FC = () => {
     <div className="flex w-full flex-col gap-3">
       <div className="grid grid-cols-2 gap-2">
         <a
-          href="www.linkedin.com/in/ilia-choumitzky"
+          href="https://www.linkedin.com/in/ilia-choumitzky/"
           target="_blank"
           className="flex h-[4.125rem] w-full transform-gpu flex-col items-center justify-center rounded-lg bg-[#2867b2] text-white duration-500 hover:scale-[.97]"
         >
