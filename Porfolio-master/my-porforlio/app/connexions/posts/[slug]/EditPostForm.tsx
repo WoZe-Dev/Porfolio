@@ -54,9 +54,6 @@ export default function EditPostForm({
     // Convertir la date YYYY-MM-DD en ISO string (à midi UTC pour éviter les problèmes de fuseau horaire)
     const dateISO = publishDate ? new Date(publishDate + 'T12:00:00.000Z').toISOString() : new Date().toISOString();
     
-    console.log("📅 Date sélectionnée (format input):", publishDate);
-    console.log("📅 Date convertie (ISO):", dateISO);
-    
     await fetch(`/api/admin/posts/${slug}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },

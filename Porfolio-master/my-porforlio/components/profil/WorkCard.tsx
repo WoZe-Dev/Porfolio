@@ -20,7 +20,7 @@ export default function WorkCard() {
               <div>
                 <div className="font-medium">voxio.fr</div>
                 <div className="text-xs opacity-80">
-                  <time dateTime={new Date().toISOString()}>
+                  <time dateTime={new Date().toISOString().split('T')[0]}>
                     {new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: 'numeric' })}
                   </time>
                 </div>

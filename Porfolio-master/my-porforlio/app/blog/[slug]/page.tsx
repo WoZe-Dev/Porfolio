@@ -10,7 +10,6 @@ import { NavbarDemo } from "@/components/navbar-menu"
 import { Clock, Calendar, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import remarkGfm from 'remark-gfm'
-import rehypeRaw from 'rehype-raw'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -179,9 +178,8 @@ async function getBlogPost(slug: string): Promise<{
   const result = await unified()
     .use(remarkParse)
     .use(remarkGfm) // optionnel mais conseillé
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeRaw) // <-- Ajoute ce plugin juste après remarkRehype
-    .use(rehypeStringify, { allowDangerousHtml: true })
+    .use(remarkRehype)
+    .use(rehypeStringify)
     .process(content)
 
   return {

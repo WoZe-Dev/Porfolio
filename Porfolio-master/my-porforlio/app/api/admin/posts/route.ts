@@ -31,7 +31,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Not authorized" }, { status: 401 });
   }
 
-  const { title = "Nouvel article" } = await req.json();
+  let title = "Nouvel article";
+  try {
+    const body = await req.json();
+    if (body.title) title = body.title;
+  } catch {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
   const slug = title
     .toString()
     .normalize("NFD")

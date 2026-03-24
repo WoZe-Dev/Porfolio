@@ -38,7 +38,12 @@ const CARDS = [
         Apprenez à créer une application SaaS évolutive avec{" "}
         <Highlight>Encore.ts</Highlight> et <Highlight>Next.js</Highlight>.
         Ce modèle intègre Clerk pour l&apos;authentification, Stripe pour les paiements,
-        Tailwind et shadcn/ui pour le style.
+        Tailwind et shadcn/ui pour le style.{" "}
+        <a href="https://dev.to/encore/build-a-production-ready-saas-application-44nb?ref=dailydev"
+           className="mt-4 inline-block text-emerald-600 hover:underline"
+           target="_blank" rel="noopener noreferrer">
+          Lire l&apos;article
+        </a>
       </p>
     ),
   },
@@ -54,7 +59,12 @@ const CARDS = [
         <br />
         PHP 9.0 introduit plusieurs améliorations : meilleur comportement
         d&apos;incrémentation/décrémentation, gestion des erreurs de désérialisation,
-        signatures de fonctions simplifiées, règles de création de tableaux plus strictes…
+        signatures de fonctions simplifiées, règles de création de tableaux plus strictes…{" "}
+        <a href="https://benjamincrozat.com/php-90?ref=dailydev"
+           className="mt-4 inline-block text-emerald-600 hover:underline"
+           target="_blank" rel="noopener noreferrer">
+          Lire l&apos;article
+        </a>
       </p>
     ),
   },

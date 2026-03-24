@@ -4,8 +4,9 @@ subtitle: "DATA"
 tags: ["Bases de données"]
 category: "Data"
 published: true
-publishDate: "2025-05-19T22:00:00.000Z"
+publishDate: "2025-05-20T12:00:00.000Z"
 ---
+
 
 
 
@@ -63,6 +64,7 @@ Une **table** contient des données organisées en **lignes** et **colonnes**.
 | **Indexation** | Création d’index sur des colonnes utilisées souvent | ✅ Recherche plus rapide |
 | **Partitionnement** | Découper une grande table en plusieurs fragments | ✅ Meilleure performance et gestion |
 | **Requêtes Optimisées** | Écrire du SQL efficace (ex : éviter `SELECT *`) | ✅ Temps de réponse réduit |
+
 
 
 

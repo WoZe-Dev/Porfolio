@@ -13,7 +13,7 @@ export default function GitHubCard() {
       >
         <span aria-hidden="true" className="pointer-events-none absolute inset-1 -z-20">
           <Image
-            alt="cat img"
+            alt="Fond de la carte GitHub — technologies web"
             loading="lazy"
             width={564}
             height={642}

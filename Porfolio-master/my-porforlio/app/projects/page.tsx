@@ -56,7 +56,7 @@ function App() {
                 <a 
                   href="https://github.com/WoZe-Dev/tricycle-research" 
                   target="_blank" 
-                  rel="noreferrer" 
+                  rel="noopener noreferrer" 
                   className="flex items-center gap-2 rounded-2xl bg-[rgba(24,23,23,0.1)] p-2 text-[rgb(24,23,23)] hover:bg-[rgb(24,23,23)] hover:text-[rgb(246,248,250)] dark:bg-[rgb(246,248,250,0.1)] dark:text-[rgb(246,248,250)] dark:hover:bg-[rgb(246,248,250)] hover:dark:text-[rgb(24,23,23)]"
                 >
                   Source
@@ -65,7 +65,7 @@ function App() {
                 <a 
                   href="tricycle-office-img" 
                   target="_blank" 
-                  rel="noreferrer" 
+                  rel="noopener noreferrer" 
                   className="flex items-center gap-2 rounded-2xl p-2 text-neutral-700 hover:bg-neutral-900 hover:text-neutral-50 dark:bg-neutral-600/5 dark:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-900"
                 >
                   Website
@@ -117,7 +117,7 @@ function App() {
                 <a 
                   href="https://github.com/mohedabbas/betweenus" 
                   target="_blank" 
-                  rel="noreferrer" 
+                  rel="noopener noreferrer" 
                   className=" dark:text-white flex items-center gap-2 rounded-2xl bg-[rgba(24,23,23,0.1)] p-2 text-[rgb(24,23,23)] hover:bg-[rgb(24,23,23)] hover:text-[rgb(246,248,250)] dark:bg-[rgb(246,248,250,0.1)] dark:text-[rgb(246,248,250)] dark:hover:bg-[rgb(246,248,250)] hover:dark:text-[rgb(24,23,23)]"
                 >
                   Source
@@ -126,7 +126,7 @@ function App() {
                 <a 
                   href="betweenus" 
                   target="_blank" 
-                  rel="noreferrer" 
+                  rel="noopener noreferrer" 
                   className="flex items-center gap-2 rounded-2xl p-2 text-neutral-700 hover:bg-neutral-900 hover:text-neutral-50 dark:bg-neutral-600/5 dark:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-900"
                 >
                   Website
@@ -168,7 +168,7 @@ function App() {
                 <a 
                   href="https://github.com/WoZe-Dev/Retouche-image.git" 
                   target="_blank" 
-                  rel="noreferrer" 
+                  rel="noopener noreferrer" 
                   className="flex items-center gap-2 rounded-2xl bg-[rgba(24,23,23,0.1)] p-2 text-[rgb(24,23,23)] hover:bg-[rgb(24,23,23)] hover:text-[rgb(246,248,250)] dark:bg-[rgb(246,248,250,0.1)] dark:text-[rgb(246,248,250)] dark:hover:bg-[rgb(246,248,250)] hover:dark:text-[rgb(24,23,23)]"
                 >
                   Source
@@ -220,7 +220,7 @@ function App() {
                 <a 
                   href="https://github.com/mohed-abbas/collaboard" 
                   target="_blank" 
-                  rel="noreferrer" 
+                  rel="noopener noreferrer" 
                   className="flex items-center gap-2 rounded-2xl bg-[rgba(24,23,23,0.1)] p-2 text-[rgb(24,23,23)] hover:bg-[rgb(24,23,23)] hover:text-[rgb(246,248,250)] dark:bg-[rgb(246,248,250,0.1)] dark:text-[rgb(246,248,250)] dark:hover:bg-[rgb(246,248,250)] hover:dark:text-[rgb(24,23,23)]"
                 >
                   Source
@@ -229,7 +229,7 @@ function App() {
                 <a 
                   href="/collaboard" 
                   target="_blank" 
-                  rel="noreferrer" 
+                  rel="noopener noreferrer" 
                   className="flex items-center gap-2 rounded-2xl p-2 text-neutral-700 hover:bg-neutral-900 hover:text-neutral-50 dark:bg-neutral-600/5 dark:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-900"
                 >
                   Website

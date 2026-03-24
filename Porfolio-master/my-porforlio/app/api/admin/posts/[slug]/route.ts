@@ -22,10 +22,7 @@ export async function PUT(req: Request, { params }: { params: { slug: string } }
 
   const { title, subtitle, description, tags, category, published, publishDate } = await req.json()
   
-  // Debug: voir ce qui est reçu
-  console.log("=== API PUT /api/admin/posts/[slug] ===")
-  console.log("publishDate reçu:", publishDate)
-  console.log("Type:", typeof publishDate)
+
   
   const slug = slugify(title)
   const postsDir = path.join(process.cwd(), 'content', 'posts')

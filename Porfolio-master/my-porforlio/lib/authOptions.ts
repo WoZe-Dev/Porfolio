@@ -2,6 +2,20 @@
 import type { NextAuthOptions, Session, User } from "next-auth";
 import type { JWT } from "next-auth/jwt";
 import CredentialsProvider from "next-auth/providers/credentials";
+import bcrypt from "bcryptjs";
+import fs from "fs";
+import path from "path";
+
+/** Lit ADMIN_PASSWORD depuis .env sans expansion des $ par dotenv/Turbopack */
+function readRawHash(): string {
+  try {
+    const envContent = fs.readFileSync(path.join(process.cwd(), ".env"), "utf-8");
+    const match = envContent.match(/^ADMIN_PASSWORD=['"]?(.+?)['"]?\s*$/m);
+    return match?.[1] ?? "";
+  } catch {
+    return "";
+  }
+}
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -12,17 +26,16 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const { ADMIN_EMAIL, ADMIN_PASSWORD } = process.env;
+        const adminEmail = process.env.ADMIN_EMAIL;
+        const adminHash  = readRawHash();
 
         if (!credentials?.email || !credentials.password) return null;
+        if (credentials.email !== adminEmail || !adminHash) return null;
 
-        if (
-          credentials.email === ADMIN_EMAIL &&
-          credentials.password === ADMIN_PASSWORD
-        ) {
-          return { id: "1", email: ADMIN_EMAIL, role: "admin" };
-        }
-        return null;
+        const isValid = await bcrypt.compare(credentials.password, adminHash);
+        if (!isValid) return null;
+
+        return { id: "1", email: adminEmail, role: "admin" };
       },
     }),
   ],
