@@ -15,6 +15,15 @@
   }
 }
 
+/* Dark mode global — appliqué via la classe .dark sur <html> (ThemeContext) */
+html.dark body {
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+}
+html.dark {
+  color-scheme: dark;
+}
+
 
 .justify-between{
   max-width: 57rem
@@ -43,32 +52,14 @@
 
 .about-full{
   max-width: 57rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rounded-full{
   border-radius: inherit;
 }
 
-@media (min-width: 768px) {
-  .md\:grid-cols-2 {
-      margin: auto;
-      margin-top: 10rem;
-  }
-}
-
-.h-\[100vh\]{
-  height: 102vh !important;
-}
-
-.md\:grid-cols-6{
-  position: relative;
-        top: 8rem;
-}
-
-.grid-cols-3{
-  margin: auto;
-  margin-top: 1rem;
-}
 
 
 
@@ -84,9 +75,6 @@
 
 }
 
-.dark\:bg-neutral-900\/50:is(.dark *){
-  border-radius: 1rem;
-}
 
 .brightness-\[0\.7\]{
   background-color: white;
@@ -179,12 +167,15 @@ body {
    background-color: red;
 }
 
-.grid-cols-5{
-  position: relative;
-  top: 14px;
-  margin-left: 16rem;
+/* .grid-cols-5 desktop offset supprimé (CardStack désormais col-span-3) */
 
-
+/* Texte vertical pour la carte Last.fm (colonne étroite 1/6) */
+.side-textt {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
 }
 
 
@@ -196,6 +187,49 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* ── Mobile responsive – WobbleCard grid ── */
+@media (max-width: 767px) {
+  /* Switch to flex column — bypasses all col-span issues */
+  .wobble-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Mobile order (schema) :
+     1. LogoCarousel
+     2. GitHub
+     3. Heatmap
+     4. Last.fm
+     5. Social items (Letterboxd + socials individuels)
+     6. CardStack                                        */
+  .wobble-carousel-mobile { order: 1; }
+  .wobble-github          { order: 2; }
+  .wobble-heatmap         { order: 3; }
+  .wobble-lastfm          { order: 4; }
+  .wobble-social          { order: 5; }
+  .wobble-cardstack       { order: 6; }
+
+  /* Social items : empilement vertical sur mobile */
+  .wobble-social-row {
+    flex-direction: column !important;
+  }
+  /* Letterboxd prend toute la largeur */
+  .wobble-social-row > .w-24 {
+    width: 100% !important;
+    height: 5rem;
+  }
+  /* Grille 2×2 → 1 colonne */
+  .wobble-social .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix carte "en train de travailler" : flux normal */
+  .relativee {
+    top: 0 !important;
+    justify-self: unset !important;
   }
 }
 

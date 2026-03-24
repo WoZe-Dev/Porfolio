@@ -42,7 +42,8 @@ export function AuroraBackgroundDemo() {
             style={{ color: "transparent" }}
           />
         </div>
-        <div className="flex w-full items-center gap-12 md:justify-between">
+        <WobbleCard />
+        <div className="flex w-full items-center gap-12 md:justify-between mt-8">
           <div className="flex w-full flex-col items-center gap-4 md:w-fit md:items-start">
             <span className="w-min text-7xl font-bold text-black drop-shadow-2xl dark:text-neutral-50 md:w-max">
               Ilia Choumitzky,
@@ -50,10 +51,10 @@ export function AuroraBackgroundDemo() {
             <span className="flex w-full items-center justify-center text-center text-2xl text-neutral-400 md:min-h-fit md:justify-start md:text-left md:text-3xl">
               <TypeAnimation
                 sequence={[
-                  'Développeur Full-Stack', 
-                  2000, 
-                  'Designer Photoshop', 
-                  2000, // Waits 1s
+                  'Développeur Full-Stack',
+                  2000,
+                  'Designer Photoshop',
+                  2000,
                 ]}
                 wrapper="span"
                 cursor={true}
@@ -87,7 +88,6 @@ export function AuroraBackgroundDemo() {
             />
           </div>
         </div>
-        <WobbleCard />
        
       </motion.div>
       

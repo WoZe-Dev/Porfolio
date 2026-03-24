@@ -10,7 +10,7 @@ const AboutMe: React.FC = () => {
 
   return (
     
-    <main className='bg-white dark:bg-black overflow-hidden"'>
+    <main className='bg-white dark:bg-black pt-24 pb-16 px-4'>
     <div className="grid  responsive-about about-full grid-cols-1 md:grid-cols-2 gap-8 items-center">
       {/* Section Texte */}
       <div>

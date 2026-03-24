@@ -25,7 +25,7 @@ export const AuroraBackgroundmarque = ({
       <div
       
         className={cn(
-          "relative flex flex-col h-[100vh] items-center justify-center transition-bg",
+          "relative flex flex-col h-auto items-center justify-center transition-bg",
           theme === "dark" ? "bg-black text-white" : "bg-white text-black",
           className
         )}

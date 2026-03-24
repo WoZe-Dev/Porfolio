@@ -1,14 +1,19 @@
 // components/WobbleCard.tsx
 import React from 'react';
-import { motion } from 'framer-motion';
 import LogoCarousel from '../components/LogoCarousel';
 import { CardStackDemo } from '../components/card-stack'
 import Image from 'next/image';
 
 const WobbleCard: React.FC = () => {
   return (
-    <div className="mt-8 grid grid-cols-3 gap-3 md:grid-cols-6">
-      <div className="col-span-1">
+    <div className="wobble-grid mt-8 grid grid-cols-3 gap-3 md:grid-cols-6">
+
+      {/* ── Mobile-only : LogoCarousel en premier ── */}
+      <div className="wobble-carousel-mobile block md:hidden col-span-3 overflow-hidden">
+        <LogoCarousel />
+      </div>
+
+      <div className="wobble-github col-span-3">
         <a
           className="groupe relatif flex h-full w-full transform-gpu flex-col justify-between gap-5 overflow-hidden rounded-xl text-white transition-all duration-500 will-change-[border,_transform] group-hover:scale-[.97] hover:scale-[.97] active:scale-100"
           href="https://github.com/WoZe-Dev"
@@ -41,52 +46,52 @@ const WobbleCard: React.FC = () => {
         </a>
       </div>
 
-      <div className="col-span-2">
+      <div className="wobble-heatmap col-span-2">
         <div className="groupe relatif h-full w-full transform-gpu overflow-hidden rounded-xl bg-[#f7f2f2] duration-500 hover:scale-[.97] dark:bg-[#0d1117]">
           <a href="https://github.com/WoZe-Dev" target="_blank" rel="noopener noreferrer">
             <div className="z-0 grid grid-cols-[repeat(15,minmax(0,1fr))] gap-1 opacity-90">
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
@@ -94,20 +99,20 @@ const WobbleCard: React.FC = () => {
               <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
               <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
-              <div className="taille-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(0, 109, 50)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(14, 68, 41)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(22, 27, 34)' }}></div>
+              <div className="size-3 rounded" style={{ background: 'rgb(57, 211, 83)' }}></div>
             </div>
             <div className="absolute bottom-1 flex flex-row flex-wrap gap-x-6 p-2 sm:gap-x-4 md:gap-x-6">
               <div>
@@ -123,9 +128,9 @@ const WobbleCard: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className="col-span-3">
-        <a 
-          target="_blank" 
+      <div className="wobble-lastfm col-span-1">
+        <a
+          target="_blank"
           className="relative flex h-36 transform-gpu items-center justify-center overflow-hidden rounded-lg bg-[#000] text-white duration-500 hover:scale-95" 
           href="https://www.last.fm/music/Louise+Attaque/Louise+Attaque/J%27T%27Emm%C3%A8ne+Au+Vent">
           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="absolute left-0 top-0 text-[50px] text-red-800">
@@ -160,8 +165,8 @@ const WobbleCard: React.FC = () => {
       </div>
       
       
-      <div className="col-span-3 flex flex-col gap-3">
-  <div className="flex gap-3">
+      <div className="wobble-social col-span-3 flex flex-col gap-3">
+  <div className="wobble-social-row flex gap-3">
     <div className="w-24">
       <a
         href="https://letterboxd.com/voxiofr"
@@ -263,22 +268,14 @@ const WobbleCard: React.FC = () => {
     </div>
     
   </div>
-  <LogoCarousel/>
+  {/* Desktop-only : carousel en bas du bloc social */}
+  <div className="hidden md:block overflow-hidden">
+    <LogoCarousel/>
+  </div>
 </div>
 
-<div className='cols-span-3'>
-  
-</div>
-
-
-      <div className="grid grid-cols-5 gap-2">
-        <div className='pc'>
+      <div className="wobble-cardstack col-span-3">
         <CardStackDemo/>
-
-        </div>
-        <a target="_blank" className="">
-          <svg xmlns="http://www.w3.org/2000/svg" className="text-2xl"></svg>
-        </a>
       </div>
     </div>
   );

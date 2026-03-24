@@ -3,20 +3,14 @@
 import { CardStack } from "@/components/ui/card-stack";
 import { cn } from "@/lib/utils";
 
-/* ------------------------------------------------------------------
-   Démo : empilement de cartes
-------------------------------------------------------------------- */
 export function CardStackDemo() {
   return (
-    <div className="h-[13rem] flex items-center justify-center w-full">
+    <div className="h-60 w-full overflow-hidden">
       <CardStack items={CARDS} />
     </div>
   );
 }
 
-/* ------------------------------------------------------------------
-   Petit utilitaire pour surligner un passage
-------------------------------------------------------------------- */
 export const Highlight = ({
   children,
   className,
@@ -34,27 +28,33 @@ export const Highlight = ({
   </span>
 );
 
-/* ------------------------------------------------------------------
-   Cartes — toutes possèdent désormais name & designation
-------------------------------------------------------------------- */
 const CARDS = [
   {
-    id: 1,
-    name: "Ilia Choumitzky",
-    designation: "Développeur Full-Stack",
+    id: 3,
+    name: "Nouveautés PHP 9.0",
+    designation: "Article technique",
     content: (
       <p className="text-smm text-neutral-700 dark:text-neutral-200">
-        ⚠️ Recherche une <Highlight>Alternance</Highlight> pour ma{" "}
-        5ème année en <Highlight>MASTER</Highlight> ⚠️
+        Un premier aperçu des nouvelles fonctionnalités et modifications de{" "}
+        <Highlight>PHP 9.0</Highlight>
         <br />
         <br />
-         Étudiant en 4ᵉ année d'ingénierie du web en alternance chez Tricycle Environnement, 
-         je recherche une entreprise pour achever ma dernière année en Master, en vue d'une continuité au sein de l'entreprise.
+        PHP 9.0 introduit plusieurs améliorations : meilleur comportement
+        d'incrémentation/décrémentation, gestion des erreurs de désérialisation,
+        signatures de fonctions simplifiées, règles de création de tableaux plus
+        strictes…
         <br />
+        <a
+          href="https://benjamincrozat.com/php-90?ref=dailydev"
+          className="mt-4 inline-block text-emerald-600 hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Lire l'article
+        </a>
       </p>
     ),
   },
-
   {
     id: 2,
     name: "Encore.ts + Next.js",
@@ -81,30 +81,19 @@ const CARDS = [
       </p>
     ),
   },
-
   {
-    id: 3,
-    name: "Nouveautés PHP 9.0",
-    designation: "Article technique",
+    id: 1,
+    name: "Ilia Choumitzky",
+    designation: "Développeur Full-Stack",
     content: (
       <p className="text-smm text-neutral-700 dark:text-neutral-200">
-        Un premier aperçu des nouvelles fonctionnalités et modifications de{" "}
-        <Highlight>PHP 9.0</Highlight>
+        ⚠️ Recherche une <Highlight>Alternance</Highlight> pour ma{" "}
+        5ème année en <Highlight>MASTER</Highlight> ⚠️
         <br />
         <br />
-        PHP 9.0 introduit plusieurs améliorations : meilleur comportement
-        d'incrémentation/décrémentation, gestion des erreurs de désérialisation,
-        signatures de fonctions simplifiées, règles de création de tableaux plus
-        strictes…
+        Étudiant en 4ᵉ année d'ingénierie du web en alternance chez Tricycle Environnement,
+        je recherche une entreprise pour achever ma dernière année en Master, en vue d'une continuité au sein de l'entreprise.
         <br />
-        <a
-          href="https://benjamincrozat.com/php-90?ref=dailydev"
-          className="mt-4 inline-block text-emerald-600 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Lire l'article
-        </a>
       </p>
     ),
   },

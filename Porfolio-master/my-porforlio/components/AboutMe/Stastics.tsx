@@ -27,8 +27,8 @@ const Statistics: React.FC = () => {
   const data = [
     { label: 'My Age', value: preciseAge }, // Mise à jour dynamique de l'âge
     { label: 'Github Stars', value: '1', icon: 'git.svg' },
-    { label: 'Github Followers', value: '+3', link: 'https://github.com/mateusfg7?tab=followers' , icon: 'git.svg'},
-    { label: 'Projet Git ', value: '13' , icon: 'git.svg' },
+    { label: 'Github Followers', value: '+4', link: 'https://github.com/mateusfg7?tab=followers' , icon: 'git.svg'},
+    { label: 'Projet Git ', value: '26' , icon: 'git.svg' },
     { label: 'Spotify Plays', value: '300' , icon: 'spotify.svg' },
     {
       label: 'Top Artist',
