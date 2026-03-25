@@ -50,7 +50,6 @@ const CARDS = [
   {
     id: 3,
     name: "Nouveautés PHP 9.0",
-    designation: "Article technique",
     content: (
       <p className="text-sm text-neutral-700 dark:text-neutral-200">
         Un premier aperçu des nouvelles fonctionnalités de{" "}

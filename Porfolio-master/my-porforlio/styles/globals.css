@@ -1,3 +1,21 @@
+/* ── Muthiara calligraphy font ── */
+@font-face {
+  font-family: 'Muthiara';
+  src: url('/fonts/Muthiara%20demo%20version.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.logo-script {
+  font-family: 'Muthiara', cursive;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
 .navbar-container {
   display: flex;
   align-items: center;
@@ -363,9 +381,7 @@ font-size: 0.775rem;
     left: 1rem !important;
     right: 1rem !important;
   }
-  .grid-cols-2 {
-    width: 17.5rem !important;
-  }
+  
 }
 
 
@@ -670,10 +686,10 @@ font-size: 0.775rem;
 
 
   .grid-cols-2{
-    width: 18.5rem !important;
+    /* width: 18.5rem; */
   }
     .md\:w-96 {
-        width: 22rem !important;
+        width: 22rem;
         top: 1rem;
     }
 
@@ -694,7 +710,8 @@ font-size: 0.775rem;
     }
 
     .grid-cols-2 {
-        width: 24.5rem !important;
+        width: 100%;
+
     }
 
         .text-4xl {
@@ -768,7 +785,7 @@ font-size: 0.775rem;
 }
 
 .grid-cols-2 {
-  width: 17rem;
+  width: 100%;
 }
 
   .col-span-1{

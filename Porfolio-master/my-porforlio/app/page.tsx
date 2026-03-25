@@ -10,7 +10,7 @@ import ProfilCarousel from "@/components/profil/ProfilCarousel";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Profil — Ilia Choumitzky",
+  title: "Portfolio — Ilia Choumitzky",
   description:
     "Développeur Full-Stack, étudiant en 4ᵉ année d'ingénierie web, cherche alternance Master.",
 };

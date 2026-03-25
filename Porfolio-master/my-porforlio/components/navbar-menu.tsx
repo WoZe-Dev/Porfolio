@@ -15,8 +15,6 @@ import {
   ScrollText,
   ExternalLink,
 } from "lucide-react";
-import Image from "next/image";
-
 export function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
@@ -29,8 +27,6 @@ function Navbar({ className }: { className?: string }) {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [active, setActive] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const logoSrc = theme === "dark" ? "/voxio.svg" : "/img-ilia.svg";
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -67,7 +63,14 @@ function Navbar({ className }: { className?: string }) {
           )}
         >
           <a href="/" className="flex items-center">
-            <Image src={logoSrc} alt="Brandify Logo" width={32} height={32} className="h-8" />
+            <span
+              className={cn(
+                "logo-script",
+                theme === "dark" ? "text-white" : "text-gray-900"
+              )}
+            >
+              IliaC.
+            </span>
           </a>
 
           <ul className="hidden md:flex space-x-4">

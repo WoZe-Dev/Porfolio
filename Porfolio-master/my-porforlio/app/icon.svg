@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fond cercle -->
+  <circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+  <!-- Lueur centrale -->
+  <circle cx="32" cy="32" r="28" fill="url(#glow)"/>
+  <!-- Bordure subtile -->
+  <circle cx="32" cy="32" r="30.5" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.8"/>
+
+  <!-- Monogramme IC — tracé à la main, style calligraphique -->
+  <!-- Lettre I -->
+  <line x1="21" y1="18" x2="21" y2="46" stroke="#f0ece4" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="17.5" y1="18" x2="24.5" y2="18" stroke="#f0ece4" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="17.5" y1="46" x2="24.5" y2="46" stroke="#f0ece4" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- Lettre C -->
+  <path d="M44.5 23 C41 19 33 19.5 31 27 C29 34.5 32 43 38.5 45 C41 46 44 45.5 46 43.5"
+        fill="none"
+        stroke="#f0ece4"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Accent doré — petit point décoratif -->
+  <circle cx="32" cy="56" r="1.2" fill="#c9a96e" opacity="0.7"/>
+</svg>

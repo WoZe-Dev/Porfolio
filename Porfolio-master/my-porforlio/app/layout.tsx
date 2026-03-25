@@ -10,6 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Ilia Choumitzky - Portfolio | Étudiant en 4ᵉ année d'ingénierie web - Recherche alternance en développement",
   description: "Étudiant en 4ᵉ année d'ingénierie web, je recherche une alternance en développement web (front-end et back-end). Découvrez mes projets, mes compétences techniques et téléchargez mon CV.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
 };
 
 
