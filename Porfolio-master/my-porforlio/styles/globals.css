@@ -886,6 +886,7 @@ font-size: 0.775rem;
   display: flex;
   gap: 12px;
   align-items: flex-start;
+  
 }
 .profil-left-col {
   flex: 1.15;
@@ -1061,6 +1062,11 @@ font-size: 0.775rem;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 4px;
+}
+
+
+.projet{
+  padding: 2rem;
 }
 .profil-work-project-name { font-size: 14px; font-weight: 700; }
 .profil-work-project-icons { display: flex; gap: 5px; }
